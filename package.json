@@ -1,0 +1,24 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "A collaborative project between four boot-camp students to create a social network site.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guhuyan/Project-2.git"
+  },
+  "keywords": [
+    "social",
+    "network"
+  ],
+  "author": "Gue H. Yang, John P. Mateer, Mussa, Metin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Guhuyan/Project-2/issues"
+  },
+  "homepage": "https://github.com/Guhuyan/Project-2#readme"
+}
