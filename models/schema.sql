@@ -1,5 +1,16 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+DROP DATABASE IF EXISTS app_db;
+CREATE DATABASE app_db;
+USE app_db;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+CREATE TABLE userTable(
+    
+);
+
+CREATE TABLE mainFeed(
+    id INT AUTO_INCREMENT NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    message VARCHAR(50) NOT NULL,
+    PRIMARY KEY(id)
+)
+
+CREATE TABLE dmMessage
