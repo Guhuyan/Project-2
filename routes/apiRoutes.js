@@ -34,7 +34,7 @@ module.exports = function(app) {
   });
 
   // POST route for saving a new post
-  app.post("/api/create", function(req, res) {
+  app.post("/api/users/create", function(req, res) {
     // Add sequelize code for creating a post using req.body,
     // then return the result using res.json
     db.User.create({
