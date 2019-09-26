@@ -4,6 +4,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      isEmail: true
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -12,6 +17,34 @@ module.exports = function(sequelize, DataTypes) {
       isUppercase: true,
       len: [1, 30]
     },
+    birthmonth: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      isDecimal: false,
+      isLowercase: true,
+      isUppercase: true,
+      len: [1, 2]
+    },
+    birthday: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      isDecimal: false,
+      isLowercase: true,
+      isUppercase: true,
+      len: [1, 2]
+    },
+    birthyear: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      isDecimal: false,
+      isLowercase: true,
+      isUppercase: true,
+      len: [1, 2]
+    },
+    gender: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     isLoggedin: {
       type: DataTypes.BOOLEAN,
       DefaultValue: false
@@ -19,9 +52,9 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   User.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
-    Author.hasMany(models.Post, {
+    // Associating User with Posts
+    // When an User is deleted, also delete any associated Posts
+    User.hasMany(models.Post, {
       onDelete: "cascade"
     });
   };
