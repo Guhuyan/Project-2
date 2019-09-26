@@ -1,19 +1,6 @@
-*{
-    margin:0px;
-    box-sizing:border-box;
-    transition: 0.2s all ease-in-out;
-    -webkit-transition: 0.2s all ease-in-out;
-    -o-transition: 0.2s all ease-in-out;
-    -moz-transition: 0.2s all ease-in-out;
- }
- :after, :before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
- }
+
  body{font-family: Arial, Verdana, Sans-serif;font-size:14px;padding-top:50px;}
  .container-fluid {
-    background: url("image/backgroundimg.jpg");
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -69,7 +56,7 @@
     font-size:10px;
     line-height:15px;
  }
- /Columns/
+ /* /Columns/ */
  [class=col-]{float:left;padding:0px 15px;width:100%;min-height:1px;}
  @media (min-width: 768px) {
   .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
@@ -115,7 +102,7 @@
  /* Header */
  .header {
     width: 100%;
-    background: rgb(69, 147, 219);
+    background: #2d9a40;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -139,13 +126,13 @@
  .main{
     min-height:100%;
     padding: 30px 0px;
-    background: url(image/backgroundimg.jpg) fixed center;
+    /* background: url(../imgs/wall.jpg) fixed center; */
  }
  /* Backgrounds */
  .gradient{
     background: linear-gradient(white, #D3D8E8);
  }
- /Buttons/
+ /* /Buttons/ */
  .btn {
     background: rgba(0,0,0,0.4);
     color: #fff;
@@ -164,20 +151,20 @@
     box-shadow:none;
  }
  .btn-primary {
-    background: #53aee2;
+    background: #278537;
  }
  .btn-primary:hover {
     background: #1f6b2c;
  }
  .btn-success {
-    background: #53aee2;
+    background: #4CAF50;
  }
  .btn-success:hover{
-    background: hsl(189, 77%, 59%);
+    background: #3d8c40;
  }
- /Text/
+ /* /Text/ */
  .text-primary{
-    color: #53aee2;
+    color: #0e385f;
  }
  .text-center{
     text-align:center;
@@ -208,13 +195,12 @@
     display:inline-block;
     width:100%;
     margin-bottom:10px;
-   
- 
- /Footer/
+ }
+ /* /Footer/ */
  .footer {
     padding: 20px 15px;
     box-shadow: 0px -6px 5px 0px rgba(0,0,0,0.5);
-    background: #11d0e973;
+    background: rgba(251, 249, 249, 0.45);
  }
  /* Responsive */
  @media (max-width:768px){
