@@ -10,6 +10,7 @@ module.exports = function (sequelize, DataTypes) {
       isDecimal: true,
       isLowercase: true,
       isUppercase: true,
+      len: [1, 30],
     },
     isLoggedin: {
       type: DataTypes.BOOLEAN,
