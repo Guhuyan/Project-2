@@ -1,17 +1,40 @@
-const db = require("./models");
+const db = require("../models");
 
 // Homepage logic
 exports.home = function(req, res) {
   // res.render("login");
   res.render("index");
+  /*
+  if (req.session.user) {
+    res.render("index", {username: req.session.user.username})
+  } else {
+    res.render("login");
+  }
+  */
 };
 
 exports.login = function(req, res) {
   res.send("Thank you for trying to login.");
+  /*
+  let user = new User(req.body);
+  user.login().then(function(result) {
+    req.session.user = {username: user.data.username};
+    req.session.save(function() {
+      res.redirect("/");
+    })
+  }).catch(function(err) {
+    res.send(err);
+  })
+  */
 };
 
 exports.logout = function(req, res) {
   res.send("Thank you for trying to logout.");
+  /*
+  req.session.destroy(function() {
+    res.redirect('/')
+  })
+  */
 };
 
 // Create a new user using the data provided by the request
@@ -22,9 +45,19 @@ exports.register = function(req, res) {
     password: req.body.password,
     birthmonth: req.body.birthmonth,
     birthdate: req.body.birthdate,
-    birthyear: req.body.birthyear
+    birthyear: req.body.birthyear,
+    gender: req.body.gender
   });
   res.send("Thank you for trying to register.");
+  /*
+  let user = new User(req.body)
+  user.register()
+  if (user.errors.length) {
+    res.send(user.errors)
+  } else {
+    res.send("Congrats, there are no errors.")
+  }
+  */
 };
 
 // Sequelize code to find all users, and return them to the user as json data
@@ -36,7 +69,7 @@ exports.findAll = function(req, res) {
 
 // Sequelize code to find a single user where the id is equal to req.params.id, and return them to the user as json data
 exports.findOne = function(req, res) {
-  db.Post.findOne({
+  db.User.findOne({
     where: {
       username: req.params.username
     }
@@ -46,6 +79,7 @@ exports.findOne = function(req, res) {
 };
 
 /* 
+This is for postController.js once it is created.
 
 exports.updatePost = function(req, res) {
     db.Post.update({

@@ -1,3 +1,6 @@
+const bcrypt = require("bcryptjs");
+const db = require("../models");
+
 module.exports = function(sequelize, DataTypes) {
   const User = sequelize.define("User", {
     username: {
@@ -48,8 +51,35 @@ module.exports = function(sequelize, DataTypes) {
     isLoggedin: {
       type: DataTypes.BOOLEAN,
       DefaultValue: false
+    },
+    errors: {
+      type: DataTypes.STRING
     }
   });
+
+  /*
+  User.Instance.prototype.login = function () {
+    return new Promise((resolve, reject)) => {
+      db.findOne({username: this.data.username}).then((checkUser)) => {
+        if (checkUser && bcrypt.compareSync(this.data.password, checkUser.password)) {
+          resolve("Resolved.");
+        } else {
+          reject("The username or password you have entered is wrong.");
+        }
+      }).catch(function() {
+        reject("Please try again at another time.")
+      });
+    });
+  }
+
+  User.Instance.prototype.register = function() {
+    if (!this.errors.length) {
+      let salt = bcrypt.genSaltSync(10);
+      this.data.password = bcrypt.hashSync(this.data.password, salt);
+      db.insertOne(this.data);
+    }
+  }
+  */
 
   User.associate = function(models) {
     // Associating User with Posts

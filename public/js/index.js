@@ -17,13 +17,23 @@ $("form").on("submit", function() {
   let birthyear = $('[name="year"]')
     .val()
     .trim();
+  let gender = $("#genderSelect")
+    .val()
+    .trim();
 
-  console.log(username);
-  console.log(email);
-  console.log(password);
-  console.log(birthmonth);
-  console.log(birthdate);
-  console.log(birthyear);
+  $.post("/register", {
+    type: "POST",
+    username: username,
+    password: password,
+    email: email,
+    birthmonth: birthmonth,
+    birthday: birthdate,
+    birthyear: birthyear,
+    gender: gender,
+    isLoggedin: false
+  }).then(function() {
+    res.redirect("/");
+  });
   /*
     let userNew = sequelize.define("User", {
     username: username,
