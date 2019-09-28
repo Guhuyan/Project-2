@@ -2,6 +2,7 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const db = require("./models");
+const router = require("./router");
 
 // Creating an express server with the app variable
 const app = express();
@@ -23,10 +24,8 @@ app.set("view engine", "handlebars");
 // Static directory
 app.use(express.static("public"));
 
-// Routes
-// =============================================================
-require("./routes/htmlRoutes.js")(app);
-require("./routes/apiRoutes.js")(app);
+// Router
+app.use("/", router);
 
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
