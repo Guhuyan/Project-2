@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  $("form").on("submit", function () {
+$(document).ready(function() {
+  $("form").on("submit", function() {
     event.preventDefault();
     let username = $('[name="fname"]')
       .val()
@@ -23,7 +23,7 @@ $(document).ready(function () {
       .val()
       .trim();
 
-    $.post("/api/users/create", {
+    $.post("/register", {
       type: "POST",
       username: username,
       password: password,
@@ -33,7 +33,7 @@ $(document).ready(function () {
       birthyear: birthyear,
       gender: gender,
       isLoggedin: false
-    }).then(function () {
+    }).then(function() {
       res.redirect("/");
     });
   });
