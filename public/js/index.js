@@ -24,7 +24,11 @@ $(document).ready(function () {
     var genderV = $('#genderSelect')
     .val()
     .trim();
+  let gender = $("#genderSelect")
+    .val()
+    .trim();
 
+<<<<<<< HEAD
     //post to req.body
     $.post("/api/users/create", {
       type: "POST",
@@ -39,5 +43,26 @@ $(document).ready(function () {
     }).then(function () {
       res.redirect('/');
     })
+=======
+  $.post("/register", {
+    type: "POST",
+    username: username,
+    password: password,
+    email: email,
+    birthmonth: birthmonth,
+    birthday: birthdate,
+    birthyear: birthyear,
+    gender: gender,
+    isLoggedin: false
+  }).then(function() {
+    res.redirect("/");
+  });
+  /*
+    let userNew = sequelize.define("User", {
+    username: username,
+    email: email,
+    password: password,
+    birthday
+>>>>>>> Gue
   });
 });
