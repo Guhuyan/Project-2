@@ -57,21 +57,35 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  /*
-  User.Instance.prototype.login = function () {
-    return new Promise((resolve, reject)) => {
-      db.Sequelize.findOne({username: this.data.username}).then((checkUser)) => {
-        if (checkUser && bcrypt.compareSync(this.data.password, checkUser.password)) {
-          resolve("Resolved.");
-        } else {
-          reject("The username or password you have entered is wrong.");
-        }
-      }).catch(function() {
-        reject("Please try again at another time.")
-      });
+  User.login = function(req, res) {
+    User.findOne({ where: { email: req.body.email } }).then(function(result) {
+      console.log("It works!");
+      console.log(result);
+      if (result && bcrypt.compareSync(req.body.password, result.password)) {
+        console.log("Both passwords are equal to each other!!");
+        console.log(`${result.password} is the hashed password.`);
+        console.log(
+          `${req.body.password} is the password the user just entered.`
+        );
+      }
     });
-  }
-  */
+    // return new Promise((resolve, reject) => {
+    //   User.find({ where: { username: req.body.username } })
+    //     .then(result => {
+    //       if (
+    //         result &&
+    //         bcrypt.compareSync(req.body.password, result.password)
+    //       ) {
+    //         resolve("Login Successful!");
+    //       } else {
+    //         reject("Login failed.");
+    //       }
+    //     })
+    //     .catch(function() {
+    //       reject("Server error.");
+    //     });
+    // });
+  };
 
   User.register = function(req, res) {
     let salt = bcrypt.genSaltSync(10);

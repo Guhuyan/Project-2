@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("form").on("submit", function() {
+  $(".signup-form").on("submit", function() {
     event.preventDefault();
     let username = $('[name="fname"]')
       .val()
@@ -35,6 +35,19 @@ $(document).ready(function() {
       isLoggedin: false
     }).then(function() {
       res.redirect("/");
+    });
+  });
+
+  $("#register-login").on("submit", function() {
+    event.preventDefault();
+    $.post("/login", {
+      type: "POST",
+      email: $('[name="user_email"]')
+        .val()
+        .trim(),
+      password: $('[name="user_password"]')
+        .val()
+        .trim()
     });
   });
 });
