@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "xxx",
-=======
-    "password": "msqlpass:P3152",
->>>>>>> Gue
     "database": "app_db",
     "host": "localhost",
     "dialect": "mysql"

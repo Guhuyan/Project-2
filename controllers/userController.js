@@ -1,7 +1,7 @@
 const db = require("../models");
 
 // Homepage logic
-exports.home = function(req, res) {
+exports.home = function (req, res) {
   // res.render("login");
   res.render("index");
   /*
@@ -13,7 +13,7 @@ exports.home = function(req, res) {
   */
 };
 
-exports.login = function(req, res) {
+exports.login = function (req, res) {
   res.send("Thank you for trying to login.");
   /*
   let user = new User(req.body);
@@ -28,7 +28,7 @@ exports.login = function(req, res) {
   */
 };
 
-exports.logout = function(req, res) {
+exports.logout = function (req, res) {
   res.send("Thank you for trying to logout.");
   /*
   req.session.destroy(function() {
@@ -38,15 +38,16 @@ exports.logout = function(req, res) {
 };
 
 // Create a new user using the data provided by the request
-exports.register = function(req, res) {
+exports.register = function (req, res) {
   db.User.create({
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
     birthmonth: req.body.birthmonth,
-    birthdate: req.body.birthdate,
+    birthday: req.body.birthday,
     birthyear: req.body.birthyear,
-    gender: req.body.gender
+    gender: req.body.gender,
+    isLoggedin: req.body.isLoggedin
   });
   res.send("Thank you for trying to register.");
   /*
@@ -61,24 +62,24 @@ exports.register = function(req, res) {
 };
 
 // Sequelize code to find all users, and return them to the user as json data
-exports.findAll = function(req, res) {
-  db.User.findAll({}).then(function(dbPost) {
+exports.findAll = function (req, res) {
+  db.User.findAll({}).then(function (dbPost) {
     res.json(dbPost);
   });
 };
 
 // Sequelize code to find a single user where the id is equal to req.params.id, and return them to the user as json data
-exports.findOne = function(req, res) {
+exports.findOne = function (req, res) {
   db.User.findOne({
     where: {
       username: req.params.username
     }
-  }).then(function(dbPost) {
+  }).then(function (dbPost) {
     res.json(dbPost);
   });
 };
 
-/* 
+/*
 This is for postController.js once it is created.
 
 exports.updatePost = function(req, res) {
