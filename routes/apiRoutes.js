@@ -9,7 +9,7 @@
 
 // Dependencies
 // =============================================================
-
+var db = require("../models");
 // Requiring our Todo model
 module.exports = function(app) {
   // GET route for getting all of the posts
@@ -35,11 +35,17 @@ module.exports = function(app) {
 
   // POST route for saving a new post
   app.post("/api/users/create", function(req, res) {
-    // Add sequelize code for creating a post using req.body,
-    // then return the result using res.json
+    console.log(req.body)
+    //Add new user to database
     db.User.create({
       username: req.body.username,
-      password: req.body.password
+      email: req.body.email,
+      password: req.body.password,
+      birthmonth: req.body.birthmonth,
+      birthday: req.body.birthday,
+      birthyear: req.body.birthyear,
+      gender: req.body.gender,
+      isLoggedin: req.body.isLoggedin
     });
   });
 

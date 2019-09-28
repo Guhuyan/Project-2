@@ -43,11 +43,12 @@ module.exports = function(sequelize, DataTypes) {
     },
     gender: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     isLoggedin: {
       type: DataTypes.BOOLEAN,
-      DefaultValue: false
+      DefaultValue: false,
+      allowNull: false
     }
   });
 
