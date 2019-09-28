@@ -1,32 +1,29 @@
-$(document).ready(function() {
-  $("form").on("submit", function() {
+$(document).ready(function () {
+  $("form").on("submit", function () {
     event.preventDefault();
-    let usernameV = $('[name="fname"]')
+    let username = $('[name="fname"]')
       .val()
       .trim();
-    let emailV = $('[name="email"]')
+    let email = $('[name="email"]')
       .val()
       .trim();
-    let passwordV = $('[name="pwd"]')
+    let password = $('[name="pwd"]')
       .val()
       .trim();
-    let birthmonthV = $('[name="month"]')
+    let birthmonth = $('[name="month"]')
       .val()
       .trim();
-    let birthdateV = $('[name="date"]')
+    let birthdate = $('[name="date"]')
       .val()
       .trim();
-    let birthyearV = $('[name="year"]')
+    let birthyear = $('[name="year"]')
       .val()
       .trim();
-    var genderV = $("#genderSelect")
-      .val()
-      .trim();
-    let gender = $("#genderSelect")
+    var gender = $("#genderSelect")
       .val()
       .trim();
 
-    $.post("/register", {
+    $.post("/api/users/create", {
       type: "POST",
       username: username,
       password: password,
@@ -36,7 +33,7 @@ $(document).ready(function() {
       birthyear: birthyear,
       gender: gender,
       isLoggedin: false
-    }).then(function() {
+    }).then(function () {
       res.redirect("/");
     });
   });
