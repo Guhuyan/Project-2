@@ -16,17 +16,18 @@ exports.home = function(req, res) {
 
 exports.login = function(req, res) {
   res.send("Thank you for trying to login.");
-  /*
-  let user = new db.User(req.body);
-  user.login().then(function(result) {
-    req.session.user = {username: user.data.username};
-    req.session.save(function() {
-      res.redirect("/");
-    })
-  }).catch(function(err) {
-    res.send(err);
-  })
-  */
+
+  let user = db.User;
+  user.login(req, res);
+  // .then(function(result) {
+  //   result.session.user = { email: user.data.email };
+  //   result.session.save(function() {
+  //     location.reload();
+  //   });
+  // })
+  // .catch(function(err) {
+  //   res.send(err);
+  // });
 };
 
 exports.logout = function(req, res) {
