@@ -60,7 +60,7 @@ module.exports = function(sequelize, DataTypes) {
   /*
   User.Instance.prototype.login = function () {
     return new Promise((resolve, reject)) => {
-      db.findOne({username: this.data.username}).then((checkUser)) => {
+      db.Sequelize.findOne({username: this.data.username}).then((checkUser)) => {
         if (checkUser && bcrypt.compareSync(this.data.password, checkUser.password)) {
           resolve("Resolved.");
         } else {
@@ -71,15 +71,22 @@ module.exports = function(sequelize, DataTypes) {
       });
     });
   }
-
-  User.Instance.prototype.register = function() {
-    if (!this.errors.length) {
-      let salt = bcrypt.genSaltSync(10);
-      this.data.password = bcrypt.hashSync(this.data.password, salt);
-      db.insertOne(this.data);
-    }
-  }
   */
+
+  User.register = function(req, res) {
+    let salt = bcrypt.genSaltSync(10);
+    console.log(req.body);
+    User.create({
+      username: req.body.username,
+      email: req.body.email,
+      password: bcrypt.hashSync(req.body.password, salt),
+      birthmonth: req.body.birthmonth,
+      birthday: req.body.birthday,
+      birthyear: req.body.birthyear,
+      gender: req.body.gender,
+      isLoggedin: req.body.isLoggedin
+    });
+  };
 
   User.associate = function(models) {
     // Associating User with Posts

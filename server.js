@@ -1,6 +1,7 @@
 // Dependencies
 const express = require("express");
 const exphbs = require("express-handlebars");
+const bodyparser = require("body-parser");
 const db = require("./models");
 const router = require("./router");
 
@@ -11,8 +12,8 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 // Middleware
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyparser.urlencoded({ extended: false }));
+app.use(bodyparser.json());
 
 // Static directory
 app.use(express.static("public"));
