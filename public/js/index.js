@@ -34,6 +34,7 @@ $("form").on("submit", function() {
   }).then(function() {
     res.redirect("/");
   });
+  //TEMP
   /*
     let userNew = sequelize.define("User", {
     username: username,
