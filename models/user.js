@@ -50,15 +50,10 @@ module.exports = function(sequelize, DataTypes) {
     },
     isLoggedin: {
       type: DataTypes.BOOLEAN,
-<<<<<<< HEAD
-      DefaultValue: false,
-      allowNull: false
-=======
       DefaultValue: false
     },
     errors: {
       type: DataTypes.STRING
->>>>>>> Gue
     }
   });
 

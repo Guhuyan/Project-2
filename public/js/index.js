@@ -1,7 +1,5 @@
-
-
-$(document).ready(function () {
-  $("form").on("submit", function () {
+$(document).ready(function() {
+  $("form").on("submit", function() {
     event.preventDefault();
     let usernameV = $('[name="fname"]')
       .val()
@@ -21,49 +19,25 @@ $(document).ready(function () {
     let birthyearV = $('[name="year"]')
       .val()
       .trim();
-    var genderV = $('#genderSelect')
-    .val()
-    .trim();
-  let gender = $("#genderSelect")
-    .val()
-    .trim();
+    var genderV = $("#genderSelect")
+      .val()
+      .trim();
+    let gender = $("#genderSelect")
+      .val()
+      .trim();
 
-<<<<<<< HEAD
-    //post to req.body
-    $.post("/api/users/create", {
+    $.post("/register", {
       type: "POST",
-      username: usernameV,
-      password: passwordV,
-      email: emailV,
-      birthmonth: birthmonthV,
-      birthday: birthdateV,
-      birthyear: birthyearV,
-      gender: genderV,
+      username: username,
+      password: password,
+      email: email,
+      birthmonth: birthmonth,
+      birthday: birthdate,
+      birthyear: birthyear,
+      gender: gender,
       isLoggedin: false
-    }).then(function () {
-      res.redirect('/');
-    })
-=======
-  $.post("/register", {
-    type: "POST",
-    username: username,
-    password: password,
-    email: email,
-    birthmonth: birthmonth,
-    birthday: birthdate,
-    birthyear: birthyear,
-    gender: gender,
-    isLoggedin: false
-  }).then(function() {
-    res.redirect("/");
-  });
-  //TEMP
-  /*
-    let userNew = sequelize.define("User", {
-    username: username,
-    email: email,
-    password: password,
-    birthday
->>>>>>> Gue
+    }).then(function() {
+      res.redirect("/");
+    });
   });
 });
