@@ -25,8 +25,6 @@ $(document).ready(function() {
       .val()
       .trim(),
       isLoggedin: false
-    }).then(function() {
-      res.redirect("/");
     });
   });
 

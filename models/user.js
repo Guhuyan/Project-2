@@ -57,41 +57,9 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  User.login = function (req) {
-    User.findOne({ where: { email: req.body.email } }).then(function (result) {
-      if (result && bcrypt.compareSync(req.body.password, result.password)) {
-        let values = { isLoggedin: 1 };
-        let selector = {
-          where: { isLoggedin: 0 }
-        };
-        User.update(values, selector).then(function (result) {
-          if(result[0] === 1) {
-            console.log(`'isLoggedin' updated to: ${result}`)
-          }
-        })
-      }
-    });
-    // return new Promise((resolve, reject) => {
-    //   User.find({ where: { username: req.body.username } })
-    //     .then(result => {
-    //       if (
-    //         result &&
-    //         bcrypt.compareSync(req.body.password, result.password)
-    //       ) {
-    //         resolve("Login Successful!");
-    //       } else {
-    //         reject("Login failed.");
-    //       }
-    //     })
-    //     .catch(function() {
-    //       reject("Server error.");
-    //     });
-    // });
-  };
-
   User.register = function (req, res) {
     let salt = bcrypt.genSaltSync(10);
-    console.log(req.body);
+    // console.log(req.body);
     User.create({
       username: req.body.username,
       email: req.body.email,

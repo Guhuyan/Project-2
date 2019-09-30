@@ -1,6 +1,8 @@
 const db = require("../models");
 const session = require("express-session");
-
+const express = require("express");
+const app = express();
+const bcrypt = require("bcryptjs");
 // Homepage logic
 exports.home = function (req, res) {
   // res.render("login");
@@ -13,24 +15,19 @@ exports.home = function (req, res) {
   }
   */
 };
+exports.loginget = function (req, res) {
+  res.render("login")
+}
 
-exports.login = function (req, res) {
-  console.log(req.body)
-
-  let user = db.User;
-  user.login(req, res)
-  // .then(function(result) {
-  //   result.session.user = { email: user.data.email };
-  //   result.session.save(function() {
-  //     location.reload();
-  //   });
-  // })
-  // .catch(function(err) {
-  //   res.send(err);
-  // });
+exports.loginpost = function (req, res) {
+  db.User.findOne({ where: { email: req.body.user_email } }).then(function (result) {
+    if (result && bcrypt.compareSync(req.body.pwd, result.password)) {
+      res.redirect("/dashboard")
+    }
+  })
 };
 exports.dashboard = function (req, res) {
-res.render("main")
+  res.render("main")
 }
 
 exports.logout = function (req, res) {
