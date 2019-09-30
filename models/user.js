@@ -1,7 +1,7 @@
 const bcrypt = require("bcryptjs");
 const db = require("../models");
 
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   const User = sequelize.define("User", {
     username: {
       type: DataTypes.STRING,
@@ -57,7 +57,51 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  User.register = function (req, res) {
+  // User.login = function(req) {
+  //   User.findOne({ where: { email: req.body.email } }).then(function(result) {
+  //     console.log(result);
+  //     // If result exists & database's user password is equal to the request's password
+  //     if (result && bcrypt.compareSync(req.body.password, result.password)) {
+  //       console.log("Both passwords are equal to each other!!");
+  //       console.log(
+  //         `${result.password} is the hashed password in our database.`
+  //       );
+  //       console.log(
+  //         `${req.body.password} is the password the user just entered.`
+  //       );
+  //     } else {
+  //       console.log("Login failed.");
+  //       // return false;
+  //     }
+  //   });
+  // };
+
+  User.prototype.login = function() {
+    return new Promise((resolve, reject) => {
+      User.findOne({ where: { email: this.email } })
+        .then(userLoggingIn => {
+          // If result exists & database's user password is equal to the request's password
+          if (
+            userLoggingIn &&
+            bcrypt.compareSync(this.password, userLoggingIn.password)
+          ) {
+            resolve(
+              `Both passwords are equal to each other!! ${userLoggingIn.password} is the hashed password in our database. ${this.password} is the password the user just entered.`
+            );
+          } else {
+            reject("Login failed.");
+            // return false;
+          }
+        })
+        .catch(() => {
+          reject(
+            `Please try again later. this.email is equal to ${this.email}`
+          );
+        });
+    });
+  };
+
+  User.register = function(req, res) {
     let salt = bcrypt.genSaltSync(10);
     User.create({
       username: req.body.username,
@@ -66,12 +110,11 @@ module.exports = function (sequelize, DataTypes) {
       birthmonth: req.body.birthmonth,
       birthday: req.body.birthday,
       birthyear: req.body.birthyear,
-      gender: req.body.gender,
-      isLoggedin: req.body.isLoggedin
+      gender: req.body.gender
     });
   };
 
-  User.associate = function (models) {
+  User.associate = function(models) {
     // Associating User with Posts
     // When an User is deleted, also delete any associated Posts
     User.hasMany(models.Post, {
