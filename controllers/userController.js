@@ -1,33 +1,53 @@
 const db = require("../models");
-const session = require("express-session");
 
 // Homepage logic
 exports.home = function(req, res) {
-  // res.render("login");
-  res.render("index");
-  /*
   if (req.session.user) {
-    res.render("index", {username: req.session.user.username})
+    res.send("Welcome back, User! Cookie session is still active.");
+    // res.render("home", { username: req.session.user.username });
   } else {
-    res.render("login");
+    res.render("index");
   }
-  */
 };
 
+// Taking the request and passing it into the User model method login
 exports.login = function(req, res) {
-  res.send("Thank you for trying to login.");
-
-  let user = db.User;
-  user.login(req, res);
-  // .then(function(result) {
-  //   result.session.user = { email: user.data.email };
-  //   result.session.save(function() {
-  //     location.reload();
+  // let user = db.User;
+  // user
+  //   .login(req)
+  //   .then(function(result) {
+  //     result.session.user = { email: user.data.email };
+  //     result.session.save(function() {
+  //       res.send(result);
+  //     });
+  //     console.log("Cookie generated.");
+  //   })
+  //   .catch(function(err) {
+  //     res.send(err);
   //   });
-  // })
-  // .catch(function(err) {
-  //   res.send(err);
-  // });
+  console.log(req.body);
+  let user = db.User;
+  user
+    .update({
+      email: req.body.email,
+      password: req.body.password
+    })
+    .then(() => {
+      user
+        .login()
+        .then(function(result) {
+          req.session.user = { email: user.email };
+          req.session.save(function() {
+            res.redirect("/");
+          });
+        })
+        .catch(function(err) {
+          req.session.save(function() {
+            res.redirect("/");
+          });
+          throw err;
+        });
+    });
 };
 
 exports.logout = function(req, res) {
