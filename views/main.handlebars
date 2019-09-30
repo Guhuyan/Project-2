@@ -1,0 +1,252 @@
+<style>
+            .box{
+                background: rgba(255,255,255,1);
+                padding: 10px 20px;
+                border-radius: 2px;
+                box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.4);
+            }
+        </style>
+        
+
+    </head>
+    
+        <div class="header no-shadow">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="logo">
+                            <h1>The Social Network</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <ul class="header-menu pull-right">
+                            <li><a href="#" class="">Requests</a></li>
+                            <li><a href="#" class="">Inbox</a></li>
+                            <li><a href="#" class="">Notifications</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="container-fluid">
+                <div class="col-sm-3 left-sidebar">
+                    <ul>
+                        <li><a href="./dashboard.html" class="active">News Feed</a></li>
+                        
+                        <li><a href="./index.html">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <div class="post col-sm-12" id="post_1">
+                        <div class="row post-heading">
+                            <div class="col-sm-12">
+                                <a href="profile.html">
+                                    {{!-- <img src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/62655890_10217069337299374_1762820626009030656_n.jpg?_nc_cat=106&_nc_oc=AQmqPfOYg2BFVnQRNJCtLFWZREgzRtHUFY8ELdqk8okkG5KD_JUiqOveO6CVEG5B8vM&_nc_ht=scontent-lax3-2.xx&oh=2d62773b9aee4a97c7e81d2b57e154f0&oe=5E00A4A9 --}}
+                                    " class="profile-picture pull-left"/>
+                                    &nbsp;
+                                    <span class="post-user-name">metin aric</span><br/>
+                                    &nbsp;
+                                    <small class="post-date text-mute"></small>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row post-body">
+                            <div class="col-sm-12">
+This is the post body. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit.
+                            </div>
+                        </div>
+                        <div class="row post-action">
+                            <ul class="post-action-menu">
+                                <li><a href="javascript:void(0);" class="text-mute" onclick="like(1);">Like</a></li>
+                                <li><a href="javascript:void(0);" class="text-mute" onclick="share(1);">Share</a></li>
+                                <li><a href="javascript:void(0);" class="text-mute" onclick="comment(1);">Comment</a></li>
+                                <li class="pull-right"><a href="#" class="text-mute"><span id="post_like_count_1">1</span> Likes</a></li>
+                                <li class="pull-right"><a href="#" class="text-mute"><span id="post_comment_count_1">1</span> Comments</a></li>
+                                <li class="pull-right"><a href="#" class="text-mute"><span id="post_share_count_1">1</span> Shares</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="post col-sm-12" id="advertisement_1" style="min-height:250px">
+                    
+
+
+
+
+                    </div>
+                    <div class="post col-sm-12" id="post_2">
+                        <div class="row post-heading">
+                            <div class="col-sm-12">
+                                <a href="profile.html">
+                                    {{!-- <img src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/62655890_10217069337299374_1762820626009030656_n.jpg?_nc_cat=106&_nc_oc=AQmqPfOYg2BFVnQRNJCtLFWZREgzRtHUFY8ELdqk8okkG5KD_JUiqOveO6CVEG5B8vM&_nc_ht=scontent-lax3-2.xx&oh=2d62773b9aee4a97c7e81d2b57e154f0&oe=5E00A4A9 --}}
+                                    " class="profile-picture pull-left"/>
+                                    &nbsp;
+                                    <span class="post-user-name">musa bagci</span><br/>
+                                    &nbsp;
+                                    <small class="post-date text-mute"></small>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row post-body">
+                            <div class="col-sm-12">
+This is the post body. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit.
+
+This is the post body. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit.
+
+This is the post body. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit.
+                            </div>
+                        </div>
+                        <div class="row post-action">
+                            <ul class="post-action-menu">
+                                <li><a href="javascript:void(0);" class="text-mute" onclick="like(1);">Like</a></li>
+                                <li><a href="javascript:void(0);" class="text-mute" onclick="share(1);">Share</a></li>
+                                <li><a href="javascript:void(0);" class="text-mute" onclick="comment(1);">Comment</a></li>
+                                <li class="pull-right"><a href="#" class="text-mute"><span id="post_like_count_2">1</span> Likes</a></li>
+                                <li class="pull-right"><a href="#" class="text-mute"><span id="post_comment_count_2">1</span> Comments</a></li>
+                                <li class="pull-right"><a href="#" class="text-mute"><span id="post_share_count_2">1</span> Shares</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="post col-sm-12" id="post_3">
+                        <div class="row post-heading">
+                            <div class="col-sm-12">
+                                <a href="profile.html">
+                                    {{!-- <img src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/62655890_10217069337299374_1762820626009030656_n.jpg?_nc_cat=106&_nc_oc=AQmqPfOYg2BFVnQRNJCtLFWZREgzRtHUFY8ELdqk8okkG5KD_JUiqOveO6CVEG5B8vM&_nc_ht=scontent-lax3-2.xx&oh=2d62773b9aee4a97c7e81d2b57e154f0&oe=5E00A4A9 --}}
+                                    " class="profile-picture pull-left"/>
+                                    &nbsp;
+                                    <span class="post-user-name">gue han/span><br/>
+                                    &nbsp;
+                                    <small class="post-date text-mute"></small>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row post-body">
+                            <div class="col-sm-12">
+This is the post body. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit.
+                            </div>
+                        </div>
+                        <div class="row post-action">
+                            <ul class="post-action-menu">
+                                <li><a href="javascript:void(0);" class="text-mute" onclick="like(1);">Like</a></li>
+                                <li><a href="javascript:void(0);" class="text-mute" onclick="share(1);">Share</a></li>
+                                <li><a href="javascript:void(0);" class="text-mute" onclick="comment(1);">Comment</a></li>
+                                <li class="pull-right"><a href="#" class="text-mute"><span id="post_like_count_3">1</span> Likes</a></li>
+                                <li class="pull-right"><a href="#" class="text-mute"><span id="post_comment_count_3">1</span> Comments</a></li>
+                                <li class="pull-right"><a href="#" class="text-mute"><span id="post_share_count_3">1</span> Shares</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="post col-sm-12" id="post_4">
+                        <div class="row post-heading">
+                            <div class="col-sm-12">
+                                <a href="profile.html">
+                                    {{!-- <img src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/62655890_10217069337299374_1762820626009030656_n.jpg?_nc_cat=106&_nc_oc=AQmqPfOYg2BFVnQRNJCtLFWZREgzRtHUFY8ELdqk8okkG5KD_JUiqOveO6CVEG5B8vM&_nc_ht=scontent-lax3-2.xx&oh=2d62773b9aee4a97c7e81d2b57e154f0&oe=5E00A4A9 --}}
+                                    " class="profile-picture pull-left"/>
+                                    &nbsp;
+                                    <span class="post-user-name">John Phillip Mateer</span><br/>
+                                    &nbsp;
+                                    <small class="post-date text-mute"></small>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row post-body">
+                            <div class="col-sm-12">
+This is the post body. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit.
+                            </div>
+                        </div>
+                        <div class="row post-action">
+                            <ul class="post-action-menu">
+                                <li><a href="javascript:void(0);" class="text-mute" onclick="like(1;">Like</a></li>
+                                <li><a href="javascript:void(0);" class="text-mute" onclick="share(1);">Share</a></li>
+                                <li><a href="javascript:void(0);" class="text-mute" onclick="comment(1);">Comment</a></li>
+                                <li class="pull-right"><a href="#" class="text-mute"><span id="post_like_count_4">2142</span> Likes</a></li>
+                                <li class="pull-right"><a href="#" class="text-mute"><span id="post_comment_count_4">2172</span> Comments</a></li>
+                                <li class="pull-right"><a href="#" class="text-mute"><span id="post_share_count_4">200</span> Shares</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="post col-sm-12" id="post_5">
+                        <div class="row post-heading">
+                            <div class="col-sm-12">
+                                <a href="profile.html">
+                                    {{!-- <img src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/62655890_10217069337299374_1762820626009030656_n.jpg?_nc_cat=106&_nc_oc=AQmqPfOYg2BFVnQRNJCtLFWZREgzRtHUFY8ELdqk8okkG5KD_JUiqOveO6CVEG5B8vM&_nc_ht=scontent-lax3-2.xx&oh=2d62773b9aee4a97c7e81d2b57e154f0&oe=5E00A4A9 --}}
+                                    " class="profile-picture pull-left"/>
+                                    &nbsp;
+                                    
+                                    &nbsp;
+                                    <small class="post-date text-mute"></small>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row post-body">
+                            <div class="col-sm-12">
+This is the post body. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit.
+                            </div>
+                        </div>
+                        <div class="row post-action">
+                            <ul class="post-action-menu">
+                                <li><a href="javascript:void(0);" class="text-mute" onclick="like(1);">Like</a></li>
+                                <li><a href="javascript:void(0);" class="text-mute" onclick="share(1);">Share</a></li>
+                                <li><a href="javascript:void(0);" class="text-mute" onclick="comment(1);">Comment</a></li>
+                                <li class="pull-right"><a href="#" class="text-mute"><span id="post_like_count_5">1</span> Likes</a></li>
+                                <li class="pull-right"><a href="#" class="text-mute"><span id="post_comment_count_5">1</span> Comments</a></li>
+                                <li class="pull-right"><a href="#" class="text-mute"><span id="post_share_count_5">1</span> Shares</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 chat-users">
+                    <div class="row">
+                        <h3>Chat</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 chat-user online">
+                            <a href="#">
+                                {{!-- <img src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/62655890_10217069337299374_1762820626009030656_n.jpg?_nc_cat=106&_nc_oc=AQmqPfOYg2BFVnQRNJCtLFWZREgzRtHUFY8ELdqk8okkG5KD_JUiqOveO6CVEG5B8vM&_nc_ht=scontent-lax3-2.xx&oh=2d62773b9aee4a97c7e81d2b57e154f0&oe=5E00A4A9 --}}
+                                " class="pull-left"/>
+                                &nbsp;
+                                metin aric
+                            </a>
+                        </div>
+                        <div class="col-sm-12 chat-user online">
+                            <a href="#">
+                                {{!-- <img src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/62655890_10217069337299374_1762820626009030656_n.jpg?_nc_cat=106&_nc_oc=AQmqPfOYg2BFVnQRNJCtLFWZREgzRtHUFY8ELdqk8okkG5KD_JUiqOveO6CVEG5B8vM&_nc_ht=scontent-lax3-2.xx&oh=2d62773b9aee4a97c7e81d2b57e154f0&oe=5E00A4A9 --}}
+                                " class="pull-left"/>
+                                &nbsp;
+                                musa bagci
+                            </a>
+                        </div>
+                        <div class="col-sm-12 chat-user online">
+                            <a href="#">
+                                {{!-- <img src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/62655890_10217069337299374_1762820626009030656_n.jpg?_nc_cat=106&_nc_oc=AQmqPfOYg2BFVnQRNJCtLFWZREgzRtHUFY8ELdqk8okkG5KD_JUiqOveO6CVEG5B8vM&_nc_ht=scontent-lax3-2.xx&oh=2d62773b9aee4a97c7e81d2b57e154f0&oe=5E00A4A9 --}}
+                                " class="pull-left"/>
+                                &nbsp;
+                                gue
+                            </a>
+                        </div>
+                        <div class="col-sm-12 chat-user">
+                            <a href="#">
+                                {{!-- <img src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/62655890_10217069337299374_1762820626009030656_n.jpg?_nc_cat=106&_nc_oc=AQmqPfOYg2BFVnQRNJCtLFWZREgzRtHUFY8ELdqk8okkG5KD_JUiqOveO6CVEG5B8vM&_nc_ht=scontent-lax3-2.xx&oh=2d62773b9aee4a97c7e81d2b57e154f0&oe=5E00A4A9 --}}
+                                " class="pull-left"/>
+                                &nbsp;
+                                John Phillip Mateer
+                            </a>
+                        </div>
+                        
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer no-shadow">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>

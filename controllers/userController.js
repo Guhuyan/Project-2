@@ -1,8 +1,10 @@
 const db = require("../models");
 const session = require("express-session");
-
+const express = require("express");
+const app = express();
+const bcrypt = require("bcryptjs");
 // Homepage logic
-exports.home = function(req, res) {
+exports.home = function (req, res) {
   // res.render("login");
   res.render("index");
   /*
@@ -13,24 +15,26 @@ exports.home = function(req, res) {
   }
   */
 };
-
-exports.login = function(req, res) {
-  res.send("Thank you for trying to login.");
-
-  let user = db.User;
-  user.login(req, res);
-  // .then(function(result) {
-  //   result.session.user = { email: user.data.email };
-  //   result.session.save(function() {
-  //     location.reload();
-  //   });
-  // })
-  // .catch(function(err) {
-  //   res.send(err);
-  // });
+//Render login page
+exports.loginget = function (req, res) {
+  res.render("login")
+}
+//Compare user input password to encrypted database password, redirect if match.
+exports.loginpost = function (req, res) {
+  db.User.findOne({ where: { email: req.body.user_email } }).then(function (result) {
+    if (result && bcrypt.compareSync(req.body.pwd, result.password)) {
+      res.redirect("/dashboard")
+    } else {
+      res.redirect("/")
+    }
+  })
 };
 
-exports.logout = function(req, res) {
+exports.dashboard = function (req, res) {
+  res.render("main")
+}
+
+exports.logout = function (req, res) {
   res.send("Thank you for trying to logout.");
   /*
   req.session.destroy(function() {
@@ -40,7 +44,7 @@ exports.logout = function(req, res) {
 };
 
 // Create a new user using the data provided by the request
-exports.register = function(req, res) {
+exports.register = function (req, res) {
   let user = db.User;
   user.register(req, res);
   res.send("Thank you for trying to register.");
@@ -56,19 +60,19 @@ exports.register = function(req, res) {
 };
 
 // Sequelize code to find all users, and return them to the user as json data
-exports.findAll = function(req, res) {
-  db.User.findAll({}).then(function(dbPost) {
+exports.findAll = function (req, res) {
+  db.User.findAll({}).then(function (dbPost) {
     res.json(dbPost);
   });
 };
 
 // Sequelize code to find a single user where the id is equal to req.params.id, and return them to the user as json data
-exports.findOne = function(req, res) {
+exports.findOne = function (req, res) {
   db.User.findOne({
     where: {
       username: req.params.username
     }
-  }).then(function(dbPost) {
+  }).then(function (dbPost) {
     res.json(dbPost);
   });
 };
