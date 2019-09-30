@@ -15,17 +15,21 @@ exports.home = function (req, res) {
   }
   */
 };
+//Render login page
 exports.loginget = function (req, res) {
   res.render("login")
 }
-
+//Compare user input password to encrypted database password, redirect if match.
 exports.loginpost = function (req, res) {
   db.User.findOne({ where: { email: req.body.user_email } }).then(function (result) {
     if (result && bcrypt.compareSync(req.body.pwd, result.password)) {
       res.redirect("/dashboard")
+    } else {
+      res.redirect("/")
     }
   })
 };
+
 exports.dashboard = function (req, res) {
   res.render("main")
 }

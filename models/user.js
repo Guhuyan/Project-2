@@ -59,7 +59,6 @@ module.exports = function (sequelize, DataTypes) {
 
   User.register = function (req, res) {
     let salt = bcrypt.genSaltSync(10);
-    // console.log(req.body);
     User.create({
       username: req.body.username,
       email: req.body.email,
