@@ -44,16 +44,10 @@ exports.logout = function(req, res) {
 
 // Create a new user using the data provided by the request
 exports.register = function(req, res) {
-  let salt = bcrypt.genSaltSync(10);
-  User.create({
-    username: req.body.username,
-    email: req.body.email,
-    password: bcrypt.hashSync(req.body.password, salt),
-    birthmonth: req.body.birthmonth,
-    birthday: req.body.birthday,
-    birthyear: req.body.birthyear,
-    gender: req.body.gender
-  });
+  console.log(req.body);
+  let user = db.User();
+  user.register(req, res);
+  res.redirect("/");
 };
 
 // Sequelize code to find all users, and return them to the user as json data
