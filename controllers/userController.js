@@ -6,81 +6,43 @@ const bcrypt = require("bcryptjs");
 
 // Homepage logic
 exports.home = function(req, res) {
-  // res.render("login");
-  if (req.session.user) {
-    res.send("Welcome back, User! Cookie session is still active.");
-    // res.render("home", { username: req.session.user.username });
+  if (req.session.result) {
+    res.render("dashboard");
   } else {
     res.render("index");
   }
 };
 
-// Taking the request and passing it into the User model method login
-exports.login = function(req, res) {
-  // let user = db.User;
-  // user
-  //   .login(req)
-  //   .then(function(result) {
-  //     result.session.user = { email: user.data.email };
-  //     result.session.save(function() {
-  //       res.send(result);
-  //     });
-  //     console.log("Cookie generated.");
-  //   })
-  //   .catch(function(err) {
-  //     res.send(err);
-  //   });
-  console.log(req.body);
-  let user = db.User;
-  user
-    .update({
-      email: req.body.email,
-      password: req.body.password
-    })
-    .then(() => {
-      user
-        .login()
-        .then(function(result) {
-          req.session.user = { email: user.email };
-          req.session.save(function() {
-            res.redirect("/");
-          });
-        })
-        .catch(function(err) {
-          req.session.save(function() {
-            res.redirect("/");
-          });
-          throw err;
-        });
-    });
+//Render login page
+exports.getlogin = function(req, res) {
+  res.render("login");
 };
 
-// //Render login page
-// exports.loginget = function (req, res) {
-//   res.render("login")
-// }
-// //Compare user input password to encrypted database password, redirect if match.
-// exports.loginpost = function (req, res) {
-//   db.User.findOne({ where: { email: req.body.user_email } }).then(function (result) {
-//     if (result && bcrypt.compareSync(req.body.pwd, result.password)) {
-//       res.redirect("/dashboard")
-//     } else {
-//       res.redirect("/")
-//     }
-//   })
-// };
+// Compare user input password to encrypted database password, redirect if match.
+exports.login = function(req, res) {
+  db.User.findOne({ where: { email: req.body.user_email } }).then(function(
+    result
+  ) {
+    if (result && bcrypt.compareSync(req.body.pwd, result.password)) {
+      req.session.result = { email: result.email };
+      req.session.save(function() {
+        res.redirect("/dashboard");
+      });
+    } else {
+      res.redirect("/");
+    }
+  });
+};
 
 exports.dashboard = function(req, res) {
-  res.render("main");
+  res.render("dashboard");
 };
 
 exports.logout = function(req, res) {
-  res.send("Thank you for trying to logout.");
-  /*
+  console.log("Thank you for trying to logout.");
   req.session.destroy(function() {
-    res.redirect('/')
-  })
-  */
+    res.redirect("/");
+  });
 };
 
 // Create a new user using the data provided by the request
