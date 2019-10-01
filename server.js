@@ -44,9 +44,6 @@ app.use(
 //   })
 // );
 
-// Router
-app.use("/", router);
-
 // Middleware
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
@@ -61,8 +58,11 @@ app.set("view engine", "handlebars");
 // Static directory
 app.use(express.static("public"));
 
-db.sequelize.sync({ force: false }).then(function() {
+db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+// Router
+app.use("/", router);

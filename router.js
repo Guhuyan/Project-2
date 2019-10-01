@@ -4,9 +4,9 @@ const userController = require("./controllers/userController");
 
 router.get("/", userController.home);
 router.post("/register", userController.register);
-router.get("/login", userController.loginget);
-router.post("/login", userController.loginpost);
-router.post("/logout", userController.logout);
+router.get("/login", userController.getlogin);
+router.post("/login", userController.login);
+router.get("/logout", userController.logout);
 router.get("/dashboard", userController.dashboard);
 
 /*
