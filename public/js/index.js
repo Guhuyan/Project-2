@@ -41,9 +41,4 @@ $(document).ready(function() {
         .trim()
     });
   });
-
-  // $("#logout").on("click", function() {
-  //   event.preventDefault();
-  //   $.post("/logout");
-  // });
 });
