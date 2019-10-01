@@ -7,7 +7,6 @@ router.post("/register", userController.register);
 router.get("/login", userController.getlogin);
 router.post("/login", userController.login);
 router.get("/logout", userController.logout);
-router.get("/dashboard", userController.dashboard);
 
 /*
 app.put("/api/posts", updatePost);

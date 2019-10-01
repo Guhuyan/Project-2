@@ -23,16 +23,12 @@ exports.login = function(req, res) {
     if (result && bcrypt.compareSync(req.body.pwd, result.password)) {
       req.session.result = { email: result.email };
       req.session.save(function() {
-        res.redirect("/dashboard");
+        res.redirect("/");
       });
     } else {
-      res.redirect("/");
+      res.redirect("/login");
     }
   });
-};
-
-exports.dashboard = function(req, res) {
-  res.render("dashboard");
 };
 
 exports.logout = function(req, res) {
@@ -45,7 +41,7 @@ exports.logout = function(req, res) {
 // Create a new user using the data provided by the request
 exports.register = function(req, res) {
   console.log(req.body);
-  let user = db.User();
+  let user = db.User;
   user.register(req, res);
   res.redirect("/");
 };
