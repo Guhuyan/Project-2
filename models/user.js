@@ -57,26 +57,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  // User.login = function(req) {
-  //   User.findOne({ where: { email: req.body.email } }).then(function(result) {
-  //     console.log(result);
-  //     // If result exists & database's user password is equal to the request's password
-  //     if (result && bcrypt.compareSync(req.body.password, result.password)) {
-  //       console.log("Both passwords are equal to each other!!");
-  //       console.log(
-  //         `${result.password} is the hashed password in our database.`
-  //       );
-  //       console.log(
-  //         `${req.body.password} is the password the user just entered.`
-  //       );
-  //     } else {
-  //       console.log("Login failed.");
-  //       // return false;
-  //     }
-  //   });
-  // };
-
-  User.prototype.login = function() {
+  User.login = function() {
     return new Promise((resolve, reject) => {
       User.findOne({ where: { email: this.email } })
         .then(userLoggingIn => {

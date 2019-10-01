@@ -48,9 +48,6 @@ app.use(
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
-// Static directory
-app.use(express.static("public"));
-
 // Handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
@@ -58,11 +55,11 @@ app.set("view engine", "handlebars");
 // Static directory
 app.use(express.static("public"));
 
-db.sequelize.sync({ force: true }).then(function() {
+// Router
+app.use("/", router);
+
+db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
 });
-
-// Router
-app.use("/", router);

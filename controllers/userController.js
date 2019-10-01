@@ -1,7 +1,4 @@
 const db = require("../models");
-const session = require("express-session");
-const express = require("express");
-const app = express();
 const bcrypt = require("bcryptjs");
 
 // Homepage logic
@@ -26,16 +23,12 @@ exports.login = function(req, res) {
     if (result && bcrypt.compareSync(req.body.pwd, result.password)) {
       req.session.result = { email: result.email };
       req.session.save(function() {
-        res.redirect("/dashboard");
+        res.redirect("/");
       });
     } else {
-      res.redirect("/");
+      res.redirect("/login");
     }
   });
-};
-
-exports.dashboard = function(req, res) {
-  res.render("dashboard");
 };
 
 exports.logout = function(req, res) {
@@ -47,17 +40,10 @@ exports.logout = function(req, res) {
 
 // Create a new user using the data provided by the request
 exports.register = function(req, res) {
+  console.log(req.body);
   let user = db.User;
   user.register(req, res);
-  res.send("Thank you for trying to register.");
-
-  // let user = new User(req.body)
-  // user.register()
-  // if (user.errors.length) {
-  //   res.send(user.errors)
-  // } else {
-  //   res.send("Congrats, there are no errors.")
-  // }
+  res.redirect("/");
 };
 
 // Sequelize code to find all users, and return them to the user as json data
