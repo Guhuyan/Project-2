@@ -57,30 +57,30 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  User.login = function() {
-    return new Promise((resolve, reject) => {
-      User.findOne({ where: { email: this.email } })
-        .then(userLoggingIn => {
-          // If result exists & database's user password is equal to the request's password
-          if (
-            userLoggingIn &&
-            bcrypt.compareSync(this.password, userLoggingIn.password)
-          ) {
-            resolve(
-              `Both passwords are equal to each other!! ${userLoggingIn.password} is the hashed password in our database. ${this.password} is the password the user just entered.`
-            );
-          } else {
-            reject("Login failed.");
-            // return false;
-          }
-        })
-        .catch(() => {
-          reject(
-            `Please try again later. this.email is equal to ${this.email}`
-          );
-        });
-    });
-  };
+  // User.login = function() {
+  //   return new Promise((resolve, reject) => {
+  //     User.findOne({ where: { email: this.email } })
+  //       .then(userLoggingIn => {
+  //         // If result exists & database's user password is equal to the request's password
+  //         if (
+  //           userLoggingIn &&
+  //           bcrypt.compareSync(this.password, userLoggingIn.password)
+  //         ) {
+  //           resolve(
+  //             `Both passwords are equal to each other!! ${userLoggingIn.password} is the hashed password in our database. ${this.password} is the password the user just entered.`
+  //           );
+  //         } else {
+  //           reject("Login failed.");
+  //           // return false;
+  //         }
+  //       })
+  //       .catch(() => {
+  //         reject(
+  //           `Please try again later. this.email is equal to ${this.email}`
+  //         );
+  //       });
+  //   });
+  // };
 
   User.register = function(req, res) {
     let salt = bcrypt.genSaltSync(10);
