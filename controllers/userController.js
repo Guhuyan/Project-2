@@ -1,7 +1,4 @@
 const db = require("../models");
-const session = require("express-session");
-const express = require("express");
-const app = express();
 const bcrypt = require("bcryptjs");
 
 // Homepage logic
@@ -47,17 +44,16 @@ exports.logout = function(req, res) {
 
 // Create a new user using the data provided by the request
 exports.register = function(req, res) {
-  let user = db.User;
-  user.register(req, res);
-  res.send("Thank you for trying to register.");
-
-  // let user = new User(req.body)
-  // user.register()
-  // if (user.errors.length) {
-  //   res.send(user.errors)
-  // } else {
-  //   res.send("Congrats, there are no errors.")
-  // }
+  let salt = bcrypt.genSaltSync(10);
+  User.create({
+    username: req.body.username,
+    email: req.body.email,
+    password: bcrypt.hashSync(req.body.password, salt),
+    birthmonth: req.body.birthmonth,
+    birthday: req.body.birthday,
+    birthyear: req.body.birthyear,
+    gender: req.body.gender
+  });
 };
 
 // Sequelize code to find all users, and return them to the user as json data
