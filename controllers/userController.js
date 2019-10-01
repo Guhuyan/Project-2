@@ -16,7 +16,7 @@ exports.home = function (req, res) {
   */
 };
 //Render login page
-exports.loginget = function (req, res) {
+exports.loginget = function (res) {
   res.render("login")
 }
 //Compare user input password to encrypted database password, redirect if match.
@@ -30,7 +30,7 @@ exports.loginpost = function (req, res) {
   })
 };
 
-exports.dashboard = function (req, res) {
+exports.dashboard = function (res) {
   res.render("main")
 }
 

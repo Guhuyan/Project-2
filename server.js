@@ -1,7 +1,7 @@
 // Dependencies
 const express = require("express");
 const exphbs = require("express-handlebars");
-const env = require("dotenv");
+// const env = require("dotenv");
 const session = require("express-session");
 const bodyparser = require("body-parser");
 const db = require("./models");
@@ -44,8 +44,8 @@ app.use(express.static("public"));
 // Router
 app.use("/", router);
 
-db.sequelize.sync({ force: false }).then(function() {
-  app.listen(PORT, function() {
+db.sequelize.sync({ force: false }).then(function () {
+  app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
 });
