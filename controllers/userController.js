@@ -11,15 +11,13 @@ exports.home = function(req, res) {
 };
 
 //Render login page
-exports.getlogin = function(req, res) {
-  res.render("login");
-};
 
-// Compare user input password to encrypted database password, redirect if match.
-exports.login = function(req, res) {
-  db.User.findOne({ where: { email: req.body.user_email } }).then(function(
-    result
-  ) {
+exports.loginget = function (res) {
+  res.render("login")
+}
+//Compare user input password to encrypted database password, redirect if match.
+exports.loginpost = function (req, res) {
+  db.User.findOne({ where: { email: req.body.user_email } }).then(function (result) {
     if (result && bcrypt.compareSync(req.body.pwd, result.password)) {
       req.session.result = { email: result.email };
       req.session.save(function() {
@@ -31,8 +29,12 @@ exports.login = function(req, res) {
   });
 };
 
-exports.logout = function(req, res) {
-  console.log("Thank you for trying to logout.");
+exports.dashboard = function (res) {
+  res.render("main")
+}
+
+exports.logout = function (req, res) {
+  res.send("Thank you for trying to logout.");
   req.session.destroy(function() {
     res.redirect("/");
   });
