@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 
 // Homepage logic
 exports.home = function (req, res) {
+  // console.log(res)
   if (req.session.result) {
     res.render("dashboard");
   } else {
