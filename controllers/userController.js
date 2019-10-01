@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 
 // Homepage logic
 exports.home = function(req, res) {
+  // console.log(res)
   if (req.session.result) {
     res.render("dashboard");
   } else {
@@ -12,8 +13,12 @@ exports.home = function(req, res) {
 
 //Render login page
 
-exports.loginget = function (res) {
+exports.loginget = function (req, res) {
+  if (!req.session.result) {
   res.render("login")
+  } else {
+    res.render("dashboard");
+  }
 }
 //Compare user input password to encrypted database password, redirect if match.
 exports.loginpost = function (req, res) {
@@ -34,7 +39,6 @@ exports.dashboard = function (res) {
 }
 
 exports.logout = function (req, res) {
-  res.send("Thank you for trying to logout.");
   req.session.destroy(function() {
     res.redirect("/");
   });
