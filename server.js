@@ -1,8 +1,7 @@
 // Dependencies
 const express = require("express");
-const exphbs = require("express-handlebars");
-// const env = require("dotenv");
 const session = require("express-session");
+const exphbs = require("express-handlebars");
 const bodyparser = require("body-parser");
 const db = require("./models");
 const router = require("./router");
@@ -10,29 +9,43 @@ const router = require("./router");
 // Creating an express server with the app variable
 const app = express();
 
+// Setting up a dynamic port
+const PORT = process.env.PORT || 8080;
+
 // Express Session
-app.set("trust proxy", 1); // trust first proxy
 app.use(
   session({
-    secret: "keyboard cat",
+    secret: "Keyboard Cat",
     resave: false,
-    saveUninitialized: true,
-    cookie: {
-      secure: true,
-      maxAge: 1000 * 60 * 30
-    }
+    saveUninitialized: false,
+    cookie: { maxAge: 1000 * 60 * 60 * 24, httpOnly: true }
   })
 );
 
-// Setting up a dynamic port
-const PORT = process.env.PORT || 8080;
+// let sessionOptions = session({
+//   host: "localhost",
+//   port: PORT,
+//   user: "root",
+//   password: "rootroot123",
+//   database: "app_db"
+// });
+
+// const sessionStore = new MySQLStore(sessionOptions);
+
+// app.use(
+//   session({
+//     key: "session_cookie",
+//     secret: "keyboard cat cat",
+//     store: sessionStore,
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: { maxAge: 1000 * 60 * 30, httpOnly: true }
+//   })
+// );
 
 // Middleware
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
-
-// Static directory
-app.use(express.static("public"));
 
 // Handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));

@@ -1,13 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const userController = require("./controllers/userController");
-router.get("/", userController.home);
-router.get("/login", userController.loginget)
-router.post("/login", userController.loginpost)
-router.post("/logout", userController.logout);
-router.get("/dashboard", userController.dashboard);
-router.post("/register", userController.register);
 
+router.get("/", userController.home);
+router.post("/register", userController.register);
+router.get("/login", userController.getlogin);
+router.post("/login", userController.login);
+router.get("/logout", userController.logout);
 
 /*
 app.put("/api/posts", updatePost);

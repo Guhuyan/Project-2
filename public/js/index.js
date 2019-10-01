@@ -4,41 +4,46 @@ $(document).ready(function() {
     $.post("/register", {
       type: "POST",
       username: $('[name="fname"]')
-      .val()
-      .trim(),
+        .val()
+        .trim(),
       password: $('[name="pwd"]')
-      .val()
-      .trim(),
+        .val()
+        .trim(),
       email: $('[name="email"]')
-      .val()
-      .trim(),
+        .val()
+        .trim(),
       birthmonth: $('[name="month"]')
-      .val()
-      .trim(),
+        .val()
+        .trim(),
       birthday: $('[name="date"]')
-      .val()
-      .trim(),
+        .val()
+        .trim(),
       birthyear: $('[name="year"]')
-      .val()
-      .trim(),
+        .val()
+        .trim(),
       gender: $("#genderSelect")
-      .val()
-      .trim(),
+        .val()
+        .trim(),
       isLoggedin: false
     });
+    console.log("Hello.");
   });
 
-  $("#register-login").on("submit", function() {
+  $("#login-form").on("submit", function() {
     event.preventDefault();
     $.post("/login", {
       type: "POST",
       email: $('[name="user_email"]')
         .val()
         .trim(),
-      password: $('[name="user_password"]')
+      password: $('[name="pwd"]')
         .val()
         .trim()
     });
   });
 
+  // $("#logout").on("click", function() {
+  //   event.preventDefault();
+  //   $.post("/logout");
+  // });
 });
