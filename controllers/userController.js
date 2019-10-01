@@ -70,6 +70,8 @@ exports.findOne = function (req, res) {
   });
 };
 
+
+
 // This is for postController.js once it is created.
 
 // exports.updatePost = function(req, res) {
