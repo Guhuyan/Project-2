@@ -1,44 +1,20 @@
-<style>
-    .box {
-        background: rgba(255, 255, 255, 1);
-        padding: 10px 20px;
-        border-radius: 2px;
-        box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.4);
-    }
-</style>
-
-<div class="header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="logo">
-                    <h1>The Social Network</h1>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <ul class="header-menu pull-right">
-                    <li><a href="/" class="">Home</a></li>
-                    <li><a href="/logout" id="logout">Logout</a></li>
-                </ul>
-            </div>
+<body>
+    <div id="navBar">
+        <div id="logo">
+            The Social Network
         </div>
+        <nav id="loginNav">
+            <a href="/logout" id="loginNavBtn">Logout</a>
+        </nav>
     </div>
-</div>
 
-<div class="container py-md-5 container--narrow">
-    <form action="create-post" method="POST">
-        <div class="form-group">
-            <label for="post-title" class="text-muted mb-1">Title</label>
-            <input required name="title" id="post-title" class="form-control form-control-lg form-control-title"
-                type="text" placeholder="" autocomplete="off">
-        </div>
+    <form id="createPostForm" action="create-post" method="POST">
+            <div id="postLabels" for="post-title">Title</div>
+            <input required class="postInputs" name="title" id="post-title" type="text" autocomplete="off">
 
-        <div class="form-group">
-            <label for="post-body" class="text-muted mb-1">Body Content</label>
-            <textarea required name="body" id="post-body" class="body-content bigger-textarea form-control"
-                type="text"></textarea>
-        </div>
+            <div id="postLabels" for="post-body">Body Content</div>
+            <textarea required class="postInputs" name="body" id="post-body" type="text"></textarea>
 
-        <button class="btn btn-primary">Save New Post</button>
+        <button id="submitPost">Save New Post</button>
     </form>
-</div>
+</body>
