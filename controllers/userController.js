@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 
 // Homepage logic
 exports.home = function(req, res) {
+  console.log(req.session);
   if (req.session.result) {
     res.render("dashboard");
   } else {
@@ -11,12 +12,12 @@ exports.home = function(req, res) {
 };
 
 //Render login page
-exports.getlogin = function(req, res) {
+
+exports.loginget = function(res) {
   res.render("login");
 };
-
-// Compare user input password to encrypted database password, redirect if match.
-exports.login = function(req, res) {
+//Compare user input password to encrypted database password, redirect if match.
+exports.loginpost = function(req, res) {
   db.User.findOne({ where: { email: req.body.user_email } }).then(function(
     result
   ) {
@@ -31,8 +32,12 @@ exports.login = function(req, res) {
   });
 };
 
+exports.dashboard = function(res) {
+  res.render("main");
+};
+
 exports.logout = function(req, res) {
-  console.log("Thank you for trying to logout.");
+  res.send("Thank you for trying to logout.");
   req.session.destroy(function() {
     res.redirect("/");
   });
@@ -63,25 +68,3 @@ exports.findOne = function(req, res) {
     res.json(dbPost);
   });
 };
-
-// This is for postController.js once it is created.
-
-// exports.updatePost = function(req, res) {
-//     db.Post.update({
-//       where: {
-//         id: req.body.id
-//       }
-//     }).then(function(dbPost) {
-//       res.json(dbPost);
-//     });
-// }
-
-// exports.deletePost = function(req, res) {
-//     db.Post.destroy({
-//         where: {
-//             id: req.params.id
-//         }
-//     }).then(function (dbPost) {
-//         res.json(dbPost);
-//     });
-// }
