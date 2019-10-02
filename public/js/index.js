@@ -1,10 +1,9 @@
-
-$(document).ready(function () {
-  $(".signup-form").on("submit", function () {
+$(document).ready(function() {
+  $(".signup-form").on("submit", function() {
     event.preventDefault();
     $.post("/register", {
       type: "POST",
-      username: $('[name="fname"]')
+      username: $('[name="username"]')
         .val()
         .trim(),
       password: $('[name="pwd"]')
@@ -29,7 +28,7 @@ $(document).ready(function () {
     });
   });
 
-  $("#login-form").on("submit", function () {
+  $("#login-form").on("submit", function() {
     event.preventDefault();
     $.post("/login", {
       type: "POST",
@@ -41,32 +40,33 @@ $(document).ready(function () {
         .trim()
     });
   });
-  $(".open-button").on("click", function () {
-    document.getElementById("myForm").style.display = "block";
-  })
-  $("#closeChat").on("click", function () {
-    document.getElementById("myForm").style.display = "none";
-  })
 
-    $("#send").on("click", function () {
-      console.log($("#msg").val())
-      event.preventDefault();
-      sendMessage({ message: $("#msg").val() });
-      $("#messageForm").trigger("reset");
-    })
-    getMessages()
-    // addMessages()
+  $(".open-button").on("click", function() {
+    document.getElementById("myForm").style.display = "block";
+  });
+  $("#closeChat").on("click", function() {
+    document.getElementById("myForm").style.display = "none";
+  });
+
+  $("#send").on("click", function() {
+    console.log($("#msg").val());
+    event.preventDefault();
+    sendMessage({ message: $("#msg").val() });
+    $("#messageForm").trigger("reset");
+  });
+  getMessages();
+  // addMessages()
   // io.on('message', addMessages)
   // socket.on('message', addMessages)
   function addMessages(message) {
-    $("#messages").append(`<p> ${message.message} </p>`)
+    $("#messages").append(`<p> ${message.message} </p>`);
   }
   function getMessages() {
-    $.get('http://localhost:8080/messages', (data) => {
+    $.get("http://localhost:8080/messages", data => {
       data.forEach(addMessages);
-    })
+    });
   }
   function sendMessage(message) {
-    $.post('http://localhost:8080/messages', message)
+    $.post("http://localhost:8080/messages", message);
   }
 });
