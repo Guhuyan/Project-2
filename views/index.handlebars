@@ -1,24 +1,27 @@
 <style>
     .signup-form {
-        background: rgba(255, 255, 255, 1);
-        padding: 10px 20px;
+        position:absolute;
+        padding: 20px;
         border-radius: 2px;
         box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.4);
+        width: 30vw;
+        margin-top: 5vw;
+        margin-right: 15vw;
+        margin-left: 55vw;
     }
 </style>
 <div class="header">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-4">
                 <div class="logo">
                     <h1>The Social Network</h1>
                 </div>
             </div>
-            <div class="col-sm-8 pull-right">
-                <div class="inline-form pull-right">
-                    <p>Already a member?</p>
-                    <input id="loginBtn" type="submit" value="Login" class="btn btn-light" />
-                </div>
+            <div class="col-5"></div>
+            <div id="indexLoginBtn" class="col-3">
+                Already a member?
+                <a href="/login" class="btn btn-light">Login</a>
             </div>
         </div>
     </div>
@@ -32,24 +35,25 @@
                         life.</h3>
                 </div>
             </div>
-            <div class="pull-right col-sm-5">
-                <div class="signup-form">
-                    <h1>Create a new account</h1>
-                    <p class="h3"></p>
-                    <form action="javascript:void(0);">
-                        <div class="form-group">
-                            <input type="text" placeholder="First Name" name="fname" class="input-lg col-sm-6" />
-                            <input type="text" placeholder="Last Name" name="lname" class="input-lg col-sm-6" />
+            <div class="signup-form">
+                <h1>Create a new account</h1>
+                <form action="javascript:void(0);">
+                    <div class="form-group">
+                        <div class="row" style="padding-left:1vw;padding-right:1vw;">
+                            <input type="text" placeholder="First Name" name="fname" class="input-lg col-6" />
+                            <input type="text" placeholder="Last Name" name="lname" class="input-lg col-6" />
                         </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Email Address" name="email" class="input-lg col-sm-12" />
-                        </div>
-                        <div class="form-group">
-                            <input type="password" placeholder="New Password" name="pwd" class="input-lg col-sm-12" />
-                        </div>
-                        <div class="form-group">
-                            <p style="font-size:20px">Birthday</p>
-                            <select class="col-sm-4 input-lg" name="date">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" name="email" class="input-lg col-sm-12" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="New Password" name="pwd" class="input-lg col-sm-12" />
+                    </div>
+                    <div class="form-group">
+                        <p style="font-size:20px">Birthday</p>
+                        <div class="row" style="padding-left:1vw;padding-right:1vw;">
+                            <select class="col-4 input-lg" name="date">
                                 <option value="0" selected="selected">Day</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -83,7 +87,7 @@
                                 <option value="30">30</option>
                                 <option value="31">31</option>
                             </select>
-                            <select class="col-sm-4 input-lg" name="month">
+                            <select class="col-4 input-lg" name="month">
                                 <option value="0" selected="selected">Month</option>
                                 <option value="1">Jan</option>
                                 <option value="2">Feb</option>
@@ -98,7 +102,7 @@
                                 <option value="11">Nov</option>
                                 <option value="12">Dec</option>
                             </select>
-                            <select class="col-sm-4 input-lg" name="year">
+                            <select class="col-4 input-lg" name="year">
                                 <option value="0" selected="1">Year</option>
                                 <option value="2017">2017</option>
                                 <option value="2016">2016</option>
@@ -215,29 +219,18 @@
                                 <option value="1905">1905</option>
                             </select>
                         </div>
-                        <div class="form-group" id="genderinput">
-                            <select id="genderSelect">
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <small class="text-mute">By clicking Create Account, you agree to our Terms and confirm that
-                                you have read our Data Policy, including our Cookie Use Policy.</small>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Create Account" class="btn btn-success input-lg" />
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="form-group" id="genderinput">
+                        <select class="col-4" id="genderSelect">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create Account" class="btn btn-success input-lg" />
+                    </div>
+                </form>
             </div>
-        </div>
-    </div>
-</div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-4">
-            &copy; The Social Network 2019.
         </div>
     </div>
 </div>

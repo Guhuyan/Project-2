@@ -7,7 +7,7 @@
 }
 .header-menu li a{
     color:#fff;
-    background-color:rgba(0,0,0,0.1);ƒ
+    background-color:rgba(0,0,0,0.1);
     padding:10px 20px;
     display:inline-block;
 }
@@ -18,8 +18,7 @@
     box-shadow:none;
 }
 .main{
-    background-image: none;
-    display:inline-block;
+    width:100%;
 }
 .main:after,.main:before{
     clear:both;
@@ -120,10 +119,10 @@
 .chat-user.online:after{
         background: #2d9a40;
 }
-.chat-user img{
+/* .chat-user img{
     width:30px;
     height:30px;
-}
+} */
 .table{
     width:100%;
     border:0px;
@@ -131,16 +130,4 @@
 .table tr td{
 padding: 10px 20px;
 margin:0px;
-}
-.table-striped tr{
-    background:rgba(0,0,0,0.05);
-}
-.table-striped tr:hover{
-    background:rgba(0,0,0,0.1);
-}
-.table-striped tr:nth-child(2n+1){
-    background:rgba(0,0,0,0.1);
-}
-.table-striped tr:nth-child(2n+1):hover{
-    background:rgba(0,0,0,0.2);
 }
