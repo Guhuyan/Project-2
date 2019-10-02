@@ -47,9 +47,19 @@ exports.logout = function(req, res) {
 
 // Create a new user using the data provided by the request
 exports.register = function(req, res) {
-  let user = db.User;
-  user.register(req);
-  res.redirect("/");
+  let salt = bcrypt.genSaltSync(10);
+  db.User.create({
+    username: req.body.username,
+    email: req.body.email,
+    password: bcrypt.hashSync(req.body.password, salt),
+    birthmonth: req.body.birthmonth,
+    birthday: req.body.birthday,
+    birthyear: req.body.birthyear,
+    gender: req.body.gender
+  }).then(function() {
+    console.log(res)
+    res.redirect("/login")
+  })
   // Need to fix this by either using callback or promise. Redirect need to execute only and only after user.register has finished executing.
 };
 

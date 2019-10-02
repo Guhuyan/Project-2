@@ -1,165 +1,22 @@
-<style>
-    .box {
-        background: rgba(255, 255, 255, 1);
-        padding: 10px 20px;
-        border-radius: 2px;
-        box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.4);
-    }
-</style>
-
-
-</head>
-
-<div class="header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="logo">
-                    <h1>The Social Network</h1>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <ul class="header-menu pull-right">
-                    <li><a href="/create-post" class="">Post</a></li>
-                    <li><a href="/logout" id="logout">Logout</a></li>
-                </ul>
-            </div>
+<body>
+    <div id="navBar">
+        <div id="logo">
+            The Social Network
         </div>
+        <nav id="loginNav">
+            <a href="/logout" id="loginNavBtn">Logout</a>
+        </nav>
     </div>
-</div>
-<div class="main">
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-sm-6">
-            <div class="post col-sm-12" id="post_1">
-                <div class="row post-heading">
-                    <div class="col-sm-12">
-                        <h2>Hello <strong>{{username}}</strong>, welcome back!</h2>
-                    </div>
-                </div>
-                <div class="row post-body">
-                    <div class="col-sm-12">
-                        This is the post body. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit.
-                        Lorem Ipsum Doler sit.
-                    </div>
-                </div>
-                <div class="row post-action">
-                </div>
-            </div>
-            <div class="post col-sm-12" id="post_2">
-                <div class="row post-heading">
-                    <div class="col-sm-12">
-                        <a>
-                            <span class="post-user-name">musa bagci</span><br />
-                            <small class="post-date text-mute"></small>
-                        </a>
-                    </div>
-                </div>
-                <div class="row post-body">
-                    <div class="col-sm-12">
-                        This is the post body. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit.
-                        Lorem Ipsum Doler sit.
-                    </div>
-                </div>
-                <div class="row post-action">
-                </div>
-            </div>
-            <div class="post col-sm-12" id="post_3">
-                <div class="row post-heading">
-                    <div class="col-sm-12">
-                        <a>
-                            <span class="post-user-name">gue<br />
-                                &nbsp;
-                                <small class="post-date text-mute"></small>
-                        </a>
-                    </div>
-                </div>
-                <div class="row post-body">
-                    <div class="col-sm-12">
-                        This is the post body. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit.
-                        Lorem Ipsum Doler sit.
-                    </div>
-                </div>
-                <div class="row post-action">
-                </div>
-            </div>
-            <div class="post col-sm-12" id="post_4">
-                <div class="row post-heading">
-                    <div class="col-sm-12">
-                        <a>
-                            <span class="post-user-name">John Phillip Mateer</span><br />
-                            &nbsp;
-                            <small class="post-date text-mute"></small>
-                        </a>
-                    </div>
-                </div>
-                <div class="row post-body">
-                    <div class="col-sm-12">
-                        This is the post body. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit.
-                        Lorem Ipsum Doler sit.
-                    </div>
-                </div>
-                <div class="row post-action">
-                </div>
-            </div>
-        </div>
-        <div style="width:30vw;">
-            <h3>Chat</h3>
-            <div class="col-sm-12 chat-user online">
-                <a href="#">
-                    metin aric
-                </a>
-            </div>
-            <div class="col-sm-12 chat-user online">
-                <a href="#">
-                    musa bagci
-                </a>
-            </div>
-            <div class="col-sm-12 chat-user online">
-                <a href="#">
-                    gue
-                </a>
-            </div>
-            <div class="col-sm-12 chat-user">
-                <a href="#">
-                    John Phillip Mateer
-                </a>
-            </div>
-
-            </a>
-        </div>
-    </div>
-    <button class="open-button">Chat</button>
+    <div id="welcomeMsg">Hello <strong>{{username}}</strong>, welcome back!</div>
+    
+        <button id="open-button">Live Chat</button>
     <div class="chat-popup" id="myForm">
         <form id="messageForm" class="form-container">
-            <h1>Chat</h1>
-            <div style="height:10vw;width:100%;overflow-x:scroll;margin-bottom:2vw;" id="messages"></div>
-            <input style="width:100%;margin-bottom:2vw;" placeholder="Type message.." id="msg"></input>
-            <button id="send" class="btn">Send</button>
-            <button id="closeChat" type="button" class="btn">Close</button>
+            <h id="chatHead">Live Chat</h>
+            <div id="messages"></div>
+            <input placeholder="Type message.." id="liveChatMessage"></input>
+            <button class="liveChatBtns" id="send">Send</button>
+            <button class="liveChatBtns" id="closeChat" type="button">Close</button>
         </form>
     </div>
-
-    {{!-- <form id="messageForm" class="container">
-        <br>
-        <div class="jumbotron">
-            <h1 class="display-4">Send Message</h1>
-            <br>
-            <input id="name" class="form-control" placeholder="Name">
-            <br>
-            <textarea id="message" class="form-control" placeholder="Your Message Here">
-</textarea>
-            <br>
-            <button id="send" class="btn btn-success">Send</button>
-        </div>
-        <div id="messages">
-
-    </form> --}}
-</div>
-</div>
-{{!-- <script>
-    var socket = io();
-
-    socket.on(‘message’, addMessages)
-</script> --}}
 </body>
