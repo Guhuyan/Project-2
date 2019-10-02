@@ -10,23 +10,8 @@
 
 </head>
 
-<div class="header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="logo">
-                    <h1>The Social Network</h1>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <ul class="header-menu pull-right">
-                    <li><a href="/create-post" class="">Post</a></li>
-                    <li><a href="/logout" id="logout">Logout</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+{{>header/header-block}}
+
 <div class="main">
     <div class="row">
         <div class="col-1"></div>
@@ -38,6 +23,11 @@
                     </div>
                 </div>
                 <div class="row post-body">
+                    {{!--
+                    {{#each posts}}
+                        {{> posts/posts-block}}
+                    {{/each}}
+                    --}}
                     <div class="col-sm-12">
                         This is the post body. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit. Lorem Ipsum Doler sit.
                         Lorem Ipsum Doler sit.

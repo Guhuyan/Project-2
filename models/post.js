@@ -19,13 +19,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Post.createPost = function(req) {
-    Post.create({
-      title: req.body.title,
-      body: req.body.body,
-      author: req.session.user.username
-    });
-  };
-
   return Post;
 };
