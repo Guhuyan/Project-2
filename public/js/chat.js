@@ -1,9 +1,19 @@
 $("#send").on("click", function () {
+    var socket = io();
     console.log($("#liveChatMessage").val())
     event.preventDefault();
     sendMessage({ message: $("#liveChatMessage").val() });
     $("#messageForm").trigger("reset");
 })
+// (function() {
+//     var  socket  =  io();
+//     $("#messageForm").submit(function(e) {
+//         e.preventDefault(); // prevents page reloading
+//         socket.emit("chat message", $("#liveChatMessage").val());
+//         $("#liveChatMessage").val("");
+//     return  true;
+// });
+// })();
 getMessages()
 function addMessages(message) {
     $("#messages").prepend(`<p> ${message.message} </p>`)
