@@ -1,65 +1,105 @@
-
- body{font-family: Arial, Verdana, Sans-serif;font-size:14px;padding-top:50px;}
- .container-fluid {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    max-width:1200px;
- }
- .row{
-    margin:0px -15px;
- }
- .row:after, .row:before {
-    display: table;
-    content: " ";
- }
- .row:after {
-    clear: both;
- }
- a{
-    text-decoration:none;
-    color:#2d9a40;
- }
- .pull-right{
-    float:right;
- }
- .pull-left{
-    float:left;
- }
- .img-responsive{
-    max-width:100%;
-    height:auto;
- }
- p{margin-bottom:5px;}
- h1,.h1{
-    font-size:35px;
-    line-height:40px;
- }
- h2,.h2{
-    font-size:30px;
-    line-height:350px;
- }
- h3,.h3{
-    font-size:25px;
-    line-height:30px;
- }
- h4,.h4{
-    font-size:20px;
-    line-height:25px;
- }
- h5,.h5{
-    font-size:15px;
-    line-height:20px;
- }
- h6,.h6{
-    font-size:10px;
-    line-height:15px;
- }
- /* /Columns/ */
- [class=col-]{float:left;padding:0px 15px;width:100%;min-height:1px;}
- @media (min-width: 768px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+body {
+  font-family: Arial, Verdana, Sans-serif;
+  font-size: 14px;
+  padding-top: 50px;
+}
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.row {
+  margin: 0px -15px;
+}
+.row:after,
+.row:before {
+  display: table;
+  content: " ";
+}
+.row:after {
+  clear: both;
+}
+a {
+  text-decoration: none;
+  color: #2d9a40;
+}
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+p {
+  margin-bottom: 5px;
+}
+h1,
+.h1 {
+  font-size: 35px;
+  line-height: 40px;
+}
+h2,
+.h2 {
+  font-size: 30px;
+  line-height: 350px;
+}
+h3,
+.h3 {
+  font-size: 25px;
+  line-height: 30px;
+}
+h4,
+.h4 {
+  font-size: 20px;
+  line-height: 25px;
+}
+h5,
+.h5 {
+  font-size: 15px;
+  line-height: 20px;
+}
+h6,
+.h6 {
+  font-size: 10px;
+  line-height: 15px;
+}
+/* /Columns/ */
+[class="col-"] {
+  float: left;
+  padding: 0px 15px;
+  width: 100%;
+  min-height: 1px;
+}
+/* Header */
+.header {
+  width: 100%;
+  background: #2d9a40;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.45);
+}
+.header .logo h1 {
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .col-sm-1,
+  .col-sm-2,
+  .col-sm-3,
+  .col-sm-4,
+  .col-sm-5,
+  .col-sm-6,
+  .col-sm-7,
+  .col-sm-8,
+  .col-sm-9,
+  .col-sm-10,
+  .col-sm-11,
+  .col-sm-12 {
     float: left;
   }
   .col-sm-12 {
@@ -98,260 +138,362 @@
   .col-sm-1 {
     width: 8.33333333%;
   }
- }
- /* Header */
- .header {
-    width: 100%;
-    background: #2d9a40;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index:999;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.45);
- }
- .header .logo h1{
-    line-height:67px;
- }
- .header .logo a{
-    color:#fff;
- }
- .header [class=col-]{
-    padding:5px 10px;
-    color:#fff;
- }
- /*.header .inline-form{
-    padding:5px 10px;
- }*/
- /* Main */
- .main{
-    min-height:100%;
-    padding: 30px 0px;
-    /* background: url(../imgs/wall.jpg) fixed center; */
- }
- /* Backgrounds */
- .gradient{
-    background: linear-gradient(white, #D3D8E8);
- }
- /* /Buttons/ */
- .btn {
-    background: rgba(0,0,0,0.4);
+  .header [class="col-"] {
+    padding: 5px 10px;
     color: #fff;
-    border: 1px solid rgba(0,0,0,0.2);
+  }
+  /* Main */
+  .main {
+    min-height: 100%;
+    padding: 30px 0px;
+  }
+  /* Backgrounds */
+  .gradient {
+    background: linear-gradient(white, #d3d8e8);
+  }
+  /* /Buttons/ */
+  .btn {
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     outline: none;
     padding: 5px 10px;
     font-size: 14px;
-    /* line-height: 28px; */
     border-radius: 2px;
     font-weight: bold;
     text-align: center;
- }
- .btn:active{
-    box-shadow:none;
- }
- .btn-primary {
-    background: #278537;
- }
- .btn-primary:hover {
-    background: #1f6b2c;
- }
- .btn-success {
-    background: #4CAF50;
- }
- .btn-success:hover{
-    background: #3d8c40;
- }
- /* /Text/ */
- .text-primary{
+  }
+  .btn:active {
+    box-shadow: none;
+  }
+  /* /Text/ */
+  .text-primary {
     color: #0e385f;
- }
- .text-center{
-    text-align:center;
- }
- .text-mute{color:#777;}
- /* Form */
- form{
-    padding:10px 0px;
- }
- input,select,textarea,button{
-    padding:5px 10px;
-    border:1px solid rgba(0,0,0,0.2);
-    border-radius:2px;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-mute {
+    color: #777;
+  }
+  /* Form */
+  form {
+    padding: 10px 0px;
+  }
+  input,
+  select,
+  textarea,
+  button {
+    padding: 5px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
     outline: none;
- }
- input:focus,select:focus,textarea:focus,button:focus{
-    border:1px solid rgba(0,0,0,0.5);
-    outline:none;
- }
- .input-lg{
-    font-size:20px;
-    padding:10px 20px;
- }
- .inline-form input{
-    display:inline-block;
- }
- .form-group{
-    display:inline-block;
-    width:100%;
-    margin-bottom:10px;
- }
- /* /Footer/ */
- .footer {
-    padding: 20px 15px;
-    box-shadow: 0px -6px 5px 0px rgba(0,0,0,0.5);
-    background: rgba(251, 249, 249, 0.45);
- }
+  }
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    outline: none;
+  }
+  .input-lg {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+  .inline-form input {
+    display: inline-block;
+  }
+  .form-group {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
 
- .header-menu{
-   list-style:none;
-   margin-top:7px;
-}
-.header-menu li{
-   display:inline-block;
-}
-.header-menu li a{
-   color:#fff;
-   background-color:rgba(0,0,0,0.1);
-   padding:10px 20px;
-   display:inline-block;
-}
-.header-menu li a:hover{
-   background-color:rgba(0,0,0,0.2);
-}
-.no-shadow{
-   box-shadow:none;
-}
-.main{
-   background-image: none;
-   display:inline-block;
-}
-.main:after,.main:before{
-   clear:both;
-}
-.left-sidebar ul{
-   list-style:none;
-}
-.left-sidebar ul li{
-   display:block;
-   margin-bottom:5px;
-}
-.left-sidebar ul li a{
-   padding:10px 20px;
-   font-weight:bold;
-}
-​
+  .header-menu {
+    list-style: none;
+    margin-top: 7px;
+  }
+  .header-menu li {
+    display: inline-block;
+  }
+  .header-menu li a {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    display: inline-block;
+  }
+  .header-menu li a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .no-shadow {
+    box-shadow: none;
+  }
+  .main {
+    background-image: none;
+    display: inline-block;
+  }
+  .main:after,
+  .main:before {
+    clear: both;
+  }
+  .left-sidebar ul {
+    list-style: none;
+  }
+  .left-sidebar ul li {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .left-sidebar ul li a {
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+  ​
 ​
 /*Post*/
-.post{
-   display:block;
-   box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.1);
-   border: 1px solid rgba(0,0,0,0.15);
-   border-radius: 2px;
-   margin-bottom:10px;
+.post {
+    display: block;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+    margin-bottom: 10px;
+  }
+  .profile-picture {
+    background-image: url(../assets/imgs/wall.jpg);
+    width: 50px;
+    height: 50px;
+  }
+  .post-heading {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .post-heading,
+  .post-body {
+    padding: 10px 5px;
+  }
+  .post-body div {
+    white-space: pre-wrap;
+  }
+  .post-user-name {
+    font-weight: bold;
+    font-family: cursive;
+    font-size: 15px;
+  }
+  .post-action {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .post-action-menu {
+    list-style: none;
+    padding: 0px;
+  }
+  .post-action-menu li,
+  .post-action-menu li a {
+    display: inline-block;
+  }
+  .post-action-menu li a {
+    padding: 10px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .post-action-menu li:not(.pull-right) a:hover {
+    color: #2d9a40;
+  }
+  /*Chat sidebar*/
+  .chat-user {
+    position: relative;
+    padding: 5px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 0, 0, 0.06);
+  }
+  .chat-user a {
+    line-height: 28px;
+    cursor: default;
+    color: rgb(255, 0, 0);
+  }
+  .chat-user:after {
+    content: "";
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    right: 5px;
+    top: 40%;
+    padding: 4px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 50%;
+  }
+  .chat-user.online a {
+    color: #2d9a40;
+    cursor: pointer;
+  }
+  .chat-user.online {
+    background: rgba(45, 154, 64, 0.06);
+  }
+  .chat-user.online:hover {
+    cursor: pointer;
+    background: rgba(45, 154, 64, 0.2);
+  }
+  .chat-user.online:after {
+    background: #2d9a40;
+  }
+  .chat-user img {
+    width: 30px;
+    height: 30px;
+  }
+  .table {
+    width: 100%;
+    border: 0px;
+  }
+  .table tr td {
+    padding: 10px 20px;
+    margin: 0px;
+  }
+  .table-striped tr {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  .table-striped tr:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .table-striped tr:nth-child(2n + 1) {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .table-striped tr:nth-child(2n + 1):hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  /* Responsive */
+  @media (max-width: 768px) {
+    body {
+      padding-top: 0px;
+    }
+    .header {
+      position: relative;
+    }
+    .header .logo {
+      text-align: center;
+    }
+  }
+
+  of the page */ .open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+  }
+  /* The popup chat - hidden by default */
+  .chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+  /* Full-width textarea */
+  .form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+  }
+  /* When the textarea gets focus, do something */
+  .form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  /* Set a style for the submit/send button */
+  .form-container .btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+  }
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: red;
+  }
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover,
+  .open-button:hover {
+    opacity: 1;
+  }
 }
-.profile-picture{
-   background-image:url(../assets/imgs/wall.jpg);
-   width:50px;
-   height:50px;
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
 }
-.post-heading{
-   border-bottom:1px solid rgba(0,0,0,0.1);
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
 }
-.post-heading,.post-body{
-   padding:10px 5px;
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
 }
-.post-body div{
-   white-space: pre-wrap;
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  height: 1vw;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
 }
-.post-user-name{
-   font-weight:bold;
-   font-family:cursive;
-   font-size:15px;
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
 }
-.post-action{
-   border-top:1px solid rgba(0,0,0,0.1);
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
 }
-.post-action-menu{
-   list-style: none;
-   padding:0px;
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
 }
-.post-action-menu li,
-.post-action-menu li a{
-   display:inline-block;
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
 }
-.post-action-menu li a {
-   padding: 10px;
-   font-size: 12px;
-   font-weight: bold;
-}
-.post-action-menu li:not(.pull-right) a:hover{
-   color:#2d9a40;
-}
-/*Chat sidebar*/
-.chat-user {
-   position:relative;
-   padding: 5px 10px;
-   border-bottom: 1px solid rgba(0,0,0,0.1);
-   background: rgba(255,0,0,0.06);
-}
-.chat-user a{
-   line-height:28px;
-   cursor: default;
-   color: rgb(255,0,0);
-}
-.chat-user:after {
-   content: "";
-   width: 3px;
-   height: 3px;
-   position: absolute;
-   right: 5px;
-   top: 40%;
-   padding: 4px;
-   background-color:rgb(255,0,0);
-   border-radius: 50%;
-}
-.chat-user.online a{
-   color: #2d9a40;
-   cursor:pointer;
-}
-.chat-user.online{
-   background: rgba(45, 154, 64, 0.06);
-}
-.chat-user.online:hover{
-   cursor:pointer;
-   background: rgba(45, 154, 64, 0.2);
-}
-.chat-user.online:after{
-       background: #2d9a40;
-}
-.chat-user img{
-   width:30px;
-   height:30px;
-}
-.table{
-   width:100%;
-   border:0px;
-}
-.table tr td{
-padding: 10px 20px;
-margin:0px;
-}
-.table-striped tr{
-   background:rgba(0,0,0,0.05);
-}
-.table-striped tr:hover{
-   background:rgba(0,0,0,0.1);
-}
-.table-striped tr:nth-child(2n+1){
-   background:rgba(0,0,0,0.1);
-}
-.table-striped tr:nth-child(2n+1):hover{
-   background:rgba(0,0,0,0.2);
-}
- /* Responsive */
- @media (max-width:768px){
-    body{padding-top:0px}
-    .header{position:relative;}
-    .header .logo{text-align:center}
- }
