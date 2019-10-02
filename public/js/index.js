@@ -48,17 +48,18 @@ $(document).ready(function () {
     document.getElementById("myForm").style.display = "none";
   })
 
-  $(() => {
-    $("#send").click(() => {
+    $("#send").on("click", function () {
+      console.log($("#msg").val())
       event.preventDefault();
-      sendMessage({ name: $("#name").val(), message: $("#message").val() });
+      sendMessage({ message: $("#msg").val() });
       $("#messageForm").trigger("reset");
     })
     getMessages()
-  })
-  socket.on('message', addMessages)
+    // addMessages()
+  // io.on('message', addMessages)
+  // socket.on('message', addMessages)
   function addMessages(message) {
-    $("#messages").append(`<h4> ${message.name} </h4> <p> ${message.message} </p>`)
+    $("#messages").append(`<p> ${message.message} </p>`)
   }
   function getMessages() {
     $.get('http://localhost:8080/messages', (data) => {

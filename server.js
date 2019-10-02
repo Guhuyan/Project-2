@@ -10,11 +10,22 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const mongoose = require('mongoose');
 
-// Creating an express server with the app variable
+// Middleware
+app.use(bodyparser.urlencoded({ extended: false }));
+app.use(bodyparser.json());
 
 // Setting up a dynamic port
 const PORT = process.env.PORT || 8080;
 
+var dbUrl = 'mongodb+srv://jjmateer:manila22@cluster0-q0kab.mongodb.net/chatroomDB?retryWrites=true&w=majority'
+
+
+mongoose.connect(dbUrl, (err) => {
+  console.log("Connected to mongoose");
+})
+io.on('connection', (err) => {
+  console.log('Connected with socket')
+})
 // Express Session
 app.use(
   session({
@@ -28,9 +39,6 @@ var Message = mongoose.model('Message', {
   name: String,
   message: String
 })
-
-var dbUrl = 'mongodb+srv://jjmateer:manila22@cluster0-q0kab.mongodb.net/chatroomDB?retryWrites=true&w=majority'
-
 app.get('/messages', (req, res) => {
   Message.find({}, (err, messages) => {
     res.send(messages);
@@ -70,19 +78,7 @@ app.post('/messages', async (req, res) => {
 })
 //connect with io
 //connect mongoose
-mongoose.connect(dbUrl, (err) => {
-  console.log("Connected to mongoose");
-})
-io.on('connection', (err) => {
-  console.log('Connected with socket')
-  if(err) {
-    throw err;
-  }
-})
-
-// Middleware
-app.use(bodyparser.urlencoded({ extended: false }));
-app.use(bodyparser.json());
+// io.on('message', addMessages)
 
 // Handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));

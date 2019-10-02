@@ -135,15 +135,16 @@
     </div>
     <button class="open-button">Chat</button>
     <div class="chat-popup" id="myForm">
-        <form action="/action_page.server.js" class="form-container">
+        <form id="messageForm" class="form-container">
             <h1>Chat</h1>
-            <textarea placeholder="Type message.." name="msg" required></textarea>
-            <button type="submit" class="btn">Send</button>
+            <div style="height:10vw;width:100%;overflow-x:scroll;margin-bottom:2vw;" id="messages"></div>
+            <input style="width:100%;margin-bottom:2vw;" placeholder="Type message.." id="msg"></input>
+            <button id="send" class="btn">Send</button>
             <button id="closeChat" type="button" class="btn">Close</button>
         </form>
     </div>
 
-    <form id="messageForm" class="container">
+    {{!-- <form id="messageForm" class="container">
         <br>
         <div class="jumbotron">
             <h1 class="display-4">Send Message</h1>
@@ -157,8 +158,12 @@
         </div>
         <div id="messages">
 
-    </form>
+    </form> --}}
 </div>
 </div>
+{{!-- <script>
+    var socket = io();
 
+socket.on(‘message’, addMessages)
+</script> --}}
 </body>
