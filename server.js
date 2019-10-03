@@ -27,8 +27,7 @@ mongoose.connect(dbUrl, err => {
 // http.listen(80);
 
 io.on("connection", (io) => {
-  console.log("socket connected")
-  // socket.emit('welcome', { hello: 'world' });
+  console.log("Connected to socket.")
 });
 
 
@@ -97,6 +96,6 @@ app.use("/", router);
 
 db.sequelize.sync({ force: false }).then(function () {
   http.listen(PORT, () => {
-    console.log(`HTTP connected to ${PORT}`)
+    console.log(`Connected to port: ${PORT}`)
   })
 });
