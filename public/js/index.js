@@ -26,7 +26,9 @@ $(document).ready(function () {
         .val()
         .trim(),
       isLoggedin: false
-    });
+    }).then(function () {
+      window.location.href = "/login";
+    })
   });
 
   $("#login-form").on("submit", function () {
