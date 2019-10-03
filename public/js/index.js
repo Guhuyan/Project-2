@@ -1,6 +1,5 @@
-
-$(document).ready(function () {
-  $(".signup-form").on("submit", function () {
+$(document).ready(function() {
+  $(".signup-form").on("submit", function() {
     event.preventDefault();
     $.post("/register", {
       type: "POST",
@@ -26,12 +25,12 @@ $(document).ready(function () {
         .val()
         .trim(),
       isLoggedin: false
-    }).then(function () {
+    }).then(function() {
       window.location.href = "/login";
-    })
+    });
   });
 
-  $("#login-form").on("submit", function () {
+  $("#login-form").on("submit", function() {
     event.preventDefault();
     $.post("/login", {
       type: "POST",
@@ -43,12 +42,13 @@ $(document).ready(function () {
         .trim()
     });
   });
-  $("#open-button").on("click", function () {
+
+  $("#open-button").on("click", function() {
     $("#myForm").show();
     $("#open-button").hide();
-  })
-  $("#closeChat").on("click", function () {
+  });
+  $("#closeChat").on("click", function() {
     $("#myForm").hide();
     $("#open-button").show();
-  })
+  });
 });
