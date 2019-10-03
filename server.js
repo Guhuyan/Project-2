@@ -7,8 +7,7 @@ const bodyparser = require("body-parser");
 const db = require("./models");
 const router = require("./router");
 const http = require("http").Server(app);
-const io = require("socket.io");
-const socket = io(http);
+const io = require("socket.io")(http);
 const mongoose = require("mongoose");
 
 // Middleware
@@ -25,12 +24,18 @@ mongoose.connect(dbUrl, err => {
   console.log("Connected to mongoose");
 });
 
-socket.on("connection", (socket) => {
-  console.log("Connected with socket");
-  socket.on("disconnect", () => {
-    console.log("Disconnected")
-  })
+// http.listen(80);
+
+io.on("connection", (io) => {
+  console.log("socket connected")
+  // socket.emit('welcome', { hello: 'world' });
 });
+
+
+
+io.on("disconnect", () => {
+  console.log("Disconnected")
+})
 
 // Express Session
 app.use(
@@ -66,7 +71,7 @@ app.post("/messages", async (req, res) => {
 
     var savedMessage = await message.save();
     console.log("saved");
-    socket.emit("message", req.body);
+    io.emit("message", req.body);
     res.sendStatus(200);
   } catch (error) {
     res.sendStatus(500);
@@ -91,7 +96,7 @@ app.use(express.static("public"));
 app.use("/", router);
 
 db.sequelize.sync({ force: false }).then(function () {
-  app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
-  });
+  http.listen(PORT, () => {
+    console.log(`HTTP connected to ${PORT}`)
+  })
 });
