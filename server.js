@@ -26,16 +26,14 @@ mongoose.connect(dbUrl, err => {
 
 // http.listen(80);
 
-io.on("connection", (io) => {
-  console.log("socket connected")
+io.on("connection", io => {
+  console.log("socket connected");
   // socket.emit('welcome', { hello: 'world' });
 });
 
-
-
 io.on("disconnect", () => {
-  console.log("Disconnected")
-})
+  console.log("Disconnected");
+});
 
 // Express Session
 app.use(
@@ -95,8 +93,8 @@ app.use(express.static("public"));
 // Router
 app.use("/", router);
 
-db.sequelize.sync({ force: false }).then(function () {
+db.sequelize.sync({ force: false }).then(function() {
   http.listen(PORT, () => {
-    console.log(`HTTP connected to ${PORT}`)
-  })
+    console.log(`HTTP connected to ${PORT}`);
+  });
 });

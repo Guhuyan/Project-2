@@ -11,10 +11,9 @@ exports.postget = function(req, res) {
 };
 
 exports.create = function(req, res) {
-  Post.create({
+  db.Post.create({
     title: req.body.title,
-    body: req.body.body,
-    author: req.session.user.username
+    body: req.body.body
   })
     .then(function() {
       res.redirect("/dashboard");
