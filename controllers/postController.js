@@ -13,7 +13,8 @@ exports.postget = function(req, res) {
 exports.create = function(req, res) {
   db.Post.create({
     title: req.body.title,
-    body: req.body.body
+    body: req.body.body,
+    author: req.session.user.username
   })
     .then(function() {
       res.redirect("/dashboard");
@@ -22,6 +23,8 @@ exports.create = function(req, res) {
       res.send(err);
     });
 };
+
+// Change
 
 // exports.viewPost = async function(req, res) {
 //   db.Post.findOne({
