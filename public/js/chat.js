@@ -1,5 +1,12 @@
+var socket = io();
+
+socket.on("message", (data) => {
+    console.log("Message")
+    console.log(data)
+    addMessages(data);
+    // socket.emit('welcome', { hello: 'world' });
+});
 $("#send").on("click", function () {
-    var socket = io();
     console.log($("#liveChatMessage").val())
     event.preventDefault();
     sendMessage({ message: $("#liveChatMessage").val() });
@@ -15,8 +22,8 @@ $("#send").on("click", function () {
 // });
 // })();
 getMessages()
-function addMessages(message) {
-    $("#messages").prepend(`<p> ${message.message} </p>`)
+function addMessages(data) {
+    $("#messages").prepend(`<p> ${data.message} </p>`)
 }
 function getMessages() {
     $.get(window.location.href + 'messages', (data) => {
@@ -25,8 +32,5 @@ function getMessages() {
 }
 function sendMessage(message) {
     $.post(window.location.href + 'messages', message)
-    location.reload();
-    if (location.reload()) {
-        $("#myForm").show();
-    }
+    // location.reload();
 }
