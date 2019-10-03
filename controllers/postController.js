@@ -17,7 +17,7 @@ exports.create = function(req, res) {
     author: req.session.user.username
   })
     .then(function() {
-      res.redirect("/dashboard");
+      res.redirect("/");
     })
     .catch(function(err) {
       res.send(err);
