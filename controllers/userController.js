@@ -56,9 +56,13 @@ exports.register = function(req, res) {
     birthday: req.body.birthday,
     birthyear: req.body.birthyear,
     gender: req.body.gender
-  }).then(function() {
-    return res.redirect("/login");
-  });
+  })
+    .then(function() {
+      return res.redirect("/login");
+    })
+    .catch(function(err) {
+      res.send(err);
+    });
   // Need to fix this by either using callback or promise. Redirect need to execute only and only after user.register has finished executing.
 };
 
