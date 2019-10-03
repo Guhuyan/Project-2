@@ -1,19 +1,12 @@
 <body>
-    <div id="navBar">
-        <div id="logo">
-            The Social Network
-        </div>
-        <nav id="loginNav">
-            <a href="/logout" id="loginNavBtn">Logout</a>
-        </nav>
-    </div>
+    {{>header/header-block}}
 
     <form id="createPostForm" action="create-post" method="POST">
-            <div id="postLabels" for="post-title">Title</div>
-            <input required class="postInputs" name="title" id="post-title" type="text" autocomplete="off">
+        <div id="postLabels" for="post-title">Title</div>
+        <input required class="postInputs" name="title" id="post-title" type="text" autocomplete="off">
 
-            <div id="postLabels" for="post-body">Body Content</div>
-            <textarea required class="postInputs" name="body" id="post-body" type="text"></textarea>
+        <div id="postLabels" for="post-body">Body Content</div>
+        <textarea required class="postInputs" name="body" id="post-body" type="text"></textarea>
 
         <button id="submitPost">Save New Post</button>
     </form>

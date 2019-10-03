@@ -1,15 +1,15 @@
 <body>
-    <div id="navBar">
-        <div id="logo">
-            The Social Network
-        </div>
-        <nav id="loginNav">
-            <a href="/logout" id="loginNavBtn">Logout</a>
-        </nav>
-    </div>
+    {{>header/header-block}}
+
+    {{!--
+    {{#each posts}}
+        {{> posts/posts-block}}
+    {{/each}}
+    --}}
+
     <div id="welcomeMsg">Hello <strong>{{username}}</strong>, welcome back!</div>
-    
-        <button id="open-button">Live Chat</button>
+
+    <button id="open-button">Live Chat</button>
     <div class="chat-popup" id="myForm">
         <form id="messageForm" class="form-container">
             <h id="chatHead">Live Chat</h>
