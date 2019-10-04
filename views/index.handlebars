@@ -1,15 +1,14 @@
 <body>
     <div id="navBar">
-        <div id="logo">
+        <a id="logo" href="/">
             The Social Network
-        </div>
+        </a>
         <nav id="loginNav">
-            Already a member?
-            <a href="/login" id="loginNavBtn">Login</a>
+            <a href="/login" class="navBtn">Login</a>
         </nav>
     </div>
     <form class="signup-form">
-        <div id=" signupLabel">Create a new account</div>
+        <div class="labels" id="signupLabel">Create a new account</div>
         <div id="nameDiv" class="form-group">
             <input type="text" placeholder="First Name" class="nameInputs" name="fname">
             <input type="text" placeholder="Last Name" class="nameInputs" name="lname">
@@ -188,6 +187,7 @@
             <option>Male</option>
             <option>Female</option>
         </select>
-        <input id="submitBtn" type="submit" value="Create Account" />
+        <input id="submitBtn" class="formBtn" type="submit" value="Create Account" />
     </form>
 </body>
+<footer></footer>

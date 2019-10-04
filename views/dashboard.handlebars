@@ -1,22 +1,38 @@
 <body>
-    {{>header/header-block}}
-
-    {{!--
+    <div id="navBar">
+        <a id="logo" href="/">
+            The Social Network
+        </a>
+        <nav id="loginNav">
+            <a href="/create-post" class="navBtn">Post</a>
+            <a href="/logout" class="navBtn">Logout</a>
+        </nav>
+    </div>
+    <div id="welcomeMsg">Hello <strong>{{username}}</strong>, welcome back!</div>
+    <div id="mainContent">
+        <ul id="postCont">
+            ******RENDER POSTS HERE********
+            <BR>
+            *******HEIGHT IS AUTO**********
+            {{!--
     {{#each posts}}
         {{> posts/posts-block}}
     {{/each}}
     --}}
-
-    <div id="welcomeMsg">Hello <strong>{{username}}</strong>, welcome back!</div>
-
+        </ul>
+        <ul id="loginChart">
+            ********LOGGED IN USERS*************
+        </ul>
+    </div>
     <button id="open-button">Live Chat</button>
     <div class="chat-popup" id="myForm">
         <form id="messageForm" class="form-container">
             <h id="chatHead">Live Chat</h>
             <div id="messages"></div>
-            <input placeholder="Type message.." id="liveChatMessage"></input>
-            <button class="liveChatBtns" id="send">Send</button>
-            <button class="liveChatBtns" id="closeChat" type="button">Close</button>
+            <input placeholder="Type message.." autocomplete="off" id="liveChatMessage"></input>
+            <button class="formBtn" id="liveChatBtns" name="send">Send</button>
+            <button class="formBtn" id="liveChatBtns" name="closeChat" type="button">Close</button>
         </form>
     </div>
 </body>
+<footer></footer>

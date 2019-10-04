@@ -1,22 +1,23 @@
 <body>
     <div id="navBar">
-        <div id="logo">
+        <a id="logo" href="/">
             The Social Network
-        </div>
+        </a>
         <nav id="loginNav">
-            <a href="/" id="loginNavBtn">Create Account</a>
+            <a href="/" class="navBtn" id="CreateNavBtn">Create Account</a>
         </nav>
     </div>
 
     <div class="login-form">
-        <div id="loginFormLabel">Log in</div>
+        <div class="labels" id="loginFormLabel">Log in</div>
         <form action="login" method="POST">
             <div class="form-group">
                 <input type="text" placeholder="Email Address" id="loginEmail" name="user_email" />
                 <input type="password" id="loginPassword" placeholder="New Password" name="pwd" />
-                <input type="submit" id="loginButton" value="Enter Site" />
+                <input type="submit" class="formBtn" id="loginButton" value="Enter Site" />
                 {{!-- <a id="loginSignupReturn" href="/">Create an account</a> --}}
             </div>
         </form>
     </div>
 </body>
+<footer></footer>
