@@ -1,13 +1,15 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   const User = sequelize.define("User", {
     username: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      len: [1, 30]
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      isEmail: true
+      isEmail: true,
+      len: [1, 50]
     },
     password: {
       type: DataTypes.STRING,
@@ -43,18 +45,14 @@ module.exports = function(sequelize, DataTypes) {
     },
     gender: {
       type: DataTypes.STRING,
-      allowNull: true
-    },
-    isLoggedin: {
-      type: DataTypes.BOOLEAN,
-      DefaultValue: false
+      allowNull: false
     },
     errors: {
       type: DataTypes.STRING
     }
   });
 
-  User.associate = function(models) {
+  User.associate = function (models) {
     // Associating User with Posts
     // When an User is deleted, also delete any associated Posts
     User.hasMany(models.Post, {
