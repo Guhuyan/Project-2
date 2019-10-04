@@ -16,7 +16,7 @@ exports.create = function(req, res) {
     UserId: req.session.user.id
   })
     .then(function() {
-      console.log(req.body)
+      console.log(req.body);
       res.redirect("/");
     })
     .catch(function(err) {
