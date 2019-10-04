@@ -17,8 +17,7 @@ app.use(bodyparser.json());
 // Setting up a dynamic port
 const PORT = process.env.PORT || 8080;
 
-var dbUrl =
-  "mongodb+srv://jjmateer:manila22@cluster0-q0kab.mongodb.net/chatroomDB?retryWrites=true&w=majority";
+var dbUrl = "mongodb+srv://jjmateer:manila22@cluster0-q0kab.mongodb.net/chatroomDB?retryWrites=true&w=majority";
 
 mongoose.connect(dbUrl, err => {
   console.log("Connected to mongoose");
@@ -92,7 +91,7 @@ app.use(express.static("public"));
 // Router
 app.use("/", router);
 
-db.sequelize.sync({ force: false }).then(function() {
+db.sequelize.sync({ force: false }).then(function () {
   http.listen(PORT, () => {
     console.log(`Connected to port: ${PORT}`)
   })

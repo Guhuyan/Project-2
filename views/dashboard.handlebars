@@ -10,18 +10,15 @@
     </div>
     <div id="welcomeMsg">Hello <strong>{{username}}</strong>, welcome back!</div>
     <div id="mainContent">
-        <ul id="postCont">
-            ******RENDER POSTS HERE********
-            <BR>
-            *******HEIGHT IS AUTO**********
-            {{!--
-    {{#each posts}}
-        {{> posts/posts-block}}
-    {{/each}}
-    --}}
-        </ul>
         <ul id="loginChart">
             ********LOGGED IN USERS*************
+        </ul>
+        <ul id="postCont">
+            {{#each Post}}
+            <li id="postBlock">
+                {{body}}
+            </li>
+            {{/each}}
         </ul>
     </div>
     <button id="open-button">Live Chat</button>

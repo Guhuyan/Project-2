@@ -30,7 +30,6 @@ input:focus, select:focus, textarea:focus{
 }
 #logo {
   position: absolute;
-  margin-top: 1vw;
   color: white;
   height: 100%;
   width: 27vw;
@@ -39,6 +38,8 @@ input:focus, select:focus, textarea:focus{
   cursor:pointer;
   text-shadow: 0.1vw 0.2vw 0.4vw gray;
   margin-left:5vw;
+  line-height:100%;
+  margin-top:0;
 }
 #logo:hover{
   text-shadow: 0 0 0.4vw white;
@@ -344,6 +345,13 @@ border:solid gray;
   border:none;
   border-radius:0.1vw;
   cursor: pointer;
+}
+#postBlock{
+  position:relative;
+  display:block;
+  border:solid black;
+  height:"5vw";
+  width:100%;
 }
 .formBtn:hover{
   transition:0.3s;
