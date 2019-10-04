@@ -1,121 +1,142 @@
+.grid-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "title" "title"
+    "author" "date"
+    "body" "body";
+}
+.title {
+  grid-area: title;
+}
+.author {
+  grid-area: author;
+}
+.date {
+  grid-area: date;
+}
+.body {
+  grid-area: body;
+}
+
 @media only screen and (max-width: 1920px) {
-    #navBar {
-      height: 6vw;
-    }
-    #logo {
-      height: 3vw;
-      font-size: 3vw;
-    }
-    #loginNav {
-      margin-top: 1.5vw;
-      font-size: 1.5vw;
-      height: 3vw;
-    }
-    #loginNavBtn {
-      font-size: 2vw;
-    }
-    .signup-form {
-      height: 27vw;
-    }
-    #signupLabel {
-      font-size: 2.5vw;
-    }
-    #nameDiv {
-      height: 2vw;
-      width: 30vw;
-    }
-    .nameInputs {
-      width: 14.9vw;
-      font-size: 1vw;
-    }
-    #emailInput {
-      height: 2vw;
-      font-size: 1vw;
-    }
-    #passInput {
-      height: 2vw;
-      font-size: 1vw;
-    }
-    #bdayLabel {
-      font-size: 1.6vw;
-      height: 2vw;
-    }
-    #bdayInputs {
-      height: 2vw;
-    }
-    .dmy {
-      font-size: 1vw;
-    }
-    #genderSelect {
-      font-size: 1vw;
-    }
-    #submitBtn {
-      height: 2.2vw;
-      font-size: 1.2vw;
-    }
-    .login-form {
-      width: 30vw;
-      height: 18vw;
-    }
-    #loginFormLabel {
-      font-size: 3vw;
-    }
-    #loginEmail {
-      font-size: 1vw;
-      width: 30vw;
-      height: 2vw;
-    }
-    #loginPassword {
-      font-size: 1vw;
-      width: 30vw;
-      height: 2vw;
-    }
-    #loginButton {
-      height: 2vw;
-      font-size: 1.2vw;
-    }
-    #loginSignupReturn {
-      font-size: 1.5vw;
-      margin-top: 2.5vw;
-    }
-    .chat-popup {
-      font-size: 1.5vw;
-      bottom: 5vw;
-      right: 5vw;
-      width: 30vw;
-    }
-    .liveChatBtns {
-      width: 30vw;
-      height: 2vw;
-      font-size: 1.2vw;
-    }
-    #messages {
-      height: 10vw;
-      font-size:1.1vw;
-    }
-    #open-button {
-      font-size: 1.5vw;
-    }
-    #liveChatMessage {
-      height: 2vw;
-      width: 30vw;
-      font-size: 0.8vw;
-    }
-    #welcomeMsg {
-      font-size: 3vw;
-    }
-    #chatHead {
-      font-size: 1.8vw;
-    }
-    #createPostForm {
-      height: 18vw;
-    }
-    
-    #postLabels {
-      font-size: 1.7vw;
-    }
-    #submitPost {
-      font-size: 1vw;
-    }
+  #navBar {
+    height: 6vw;
   }
-  
+  #logo {
+    height: 3vw;
+    font-size: 3vw;
+  }
+  #loginNav {
+    margin-top: 1.5vw;
+    font-size: 1.5vw;
+    height: 3vw;
+  }
+  #loginNavBtn {
+    font-size: 2vw;
+  }
+  .signup-form {
+    height: 27vw;
+  }
+  #signupLabel {
+    font-size: 2.5vw;
+  }
+  #nameDiv {
+    height: 2vw;
+    width: 30vw;
+  }
+  .nameInputs {
+    width: 14.9vw;
+    font-size: 1vw;
+  }
+  #emailInput {
+    height: 2vw;
+    font-size: 1vw;
+  }
+  #passInput {
+    height: 2vw;
+    font-size: 1vw;
+  }
+  #bdayLabel {
+    font-size: 1.6vw;
+    height: 2vw;
+  }
+  #bdayInputs {
+    height: 2vw;
+  }
+  .dmy {
+    font-size: 1vw;
+  }
+  #genderSelect {
+    font-size: 1vw;
+  }
+  #submitBtn {
+    height: 2.2vw;
+    font-size: 1.2vw;
+  }
+  .login-form {
+    width: 30vw;
+    height: 18vw;
+  }
+  #loginFormLabel {
+    font-size: 3vw;
+  }
+  #loginEmail {
+    font-size: 1vw;
+    width: 30vw;
+    height: 2vw;
+  }
+  #loginPassword {
+    font-size: 1vw;
+    width: 30vw;
+    height: 2vw;
+  }
+  #loginButton {
+    height: 2vw;
+    font-size: 1.2vw;
+  }
+  #loginSignupReturn {
+    font-size: 1.5vw;
+    margin-top: 2.5vw;
+  }
+  .chat-popup {
+    font-size: 1.5vw;
+    bottom: 5vw;
+    right: 5vw;
+    width: 30vw;
+  }
+  .liveChatBtns {
+    width: 30vw;
+    height: 2vw;
+    font-size: 1.2vw;
+  }
+  #messages {
+    height: 10vw;
+    font-size: 1.1vw;
+  }
+  #open-button {
+    font-size: 1.5vw;
+  }
+  #liveChatMessage {
+    height: 2vw;
+    width: 30vw;
+    font-size: 0.8vw;
+  }
+  #welcomeMsg {
+    font-size: 3vw;
+  }
+  #chatHead {
+    font-size: 1.8vw;
+  }
+  #createPostForm {
+    height: 18vw;
+  }
+
+  #postLabels {
+    font-size: 1.7vw;
+  }
+  #submitPost {
+    font-size: 1vw;
+  }
+}

@@ -13,21 +13,23 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     },
     author: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
-      len: [1]
+      validate: {
+        len: [1]
+      }
     }
   });
 
-  // Post.associate = function(models) {
-  //   // We're saying that a Post should belong to an Author
-  //   // A Post can't be created without an Author due to the foreign key constraint
-  //   Post.belongsTo(models.User, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  // };
+  Post.associate = function(models) {
+    // We're saying that a Post should belong to an Author
+    // A Post can't be created without an Author due to the foreign key constraint
+    Post.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 
   return Post;
 };
