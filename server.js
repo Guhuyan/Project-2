@@ -19,9 +19,6 @@ const PORT = process.env.PORT || 8080;
 
 var dbUrl = "mongodb+srv://jjmateer:manila22@cluster0-q0kab.mongodb.net/chatroomDB?retryWrites=true&w=majority";
 
-mongoose.connect(dbUrl, err => {
-  console.log("Connected to mongoose");
-});
 
 // http.listen(80);
 
@@ -31,6 +28,12 @@ io.on("connection", (io) => {
 
 io.on("disconnect", () => {
   console.log("Disconnected");
+});
+mongoose.connect(dbUrl, err => {
+  console.log("Connected to mongoose");
+  if (err) {
+    console.log(err)
+  }
 });
 
 // Express Session
