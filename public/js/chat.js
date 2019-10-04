@@ -12,15 +12,6 @@ $("#send").on("click", function () {
     sendMessage({ message: $("#liveChatMessage").val() });
     $("#messageForm").trigger("reset");
 })
-// (function() {
-//     var  socket  =  io();
-//     $("#messageForm").submit(function(e) {
-//         e.preventDefault(); // prevents page reloading
-//         socket.emit("chat message", $("#liveChatMessage").val());
-//         $("#liveChatMessage").val("");
-//     return  true;
-// });
-// })();
 getMessages()
 function addMessages(data) {
     $("#messages").prepend(`<p> ${data.message} </p>`)

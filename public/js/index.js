@@ -47,7 +47,7 @@ $(document).ready(function() {
     $("#myForm").show();
     $("#open-button").hide();
   });
-  $("#closeChat").on("click", function() {
+  $("button[name ='closeChat']").on("click", function() {
     $("#myForm").hide();
     $("#open-button").show();
   });

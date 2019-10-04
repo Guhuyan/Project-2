@@ -9,12 +9,15 @@ body {
   margin: 0;
   overflow: none;
 }
-* {
+input:focus, select:focus, textarea:focus{
+  outline:0.1vw solid green;
+}
+/* * {
   transition: 0.15s all ease-in-out;
   -webkit-transition: 0.15s all ease-in-out;
   -o-transition: 0.15s all ease-in-out;
   -moz-transition: 0.15s all ease-in-out;
-}
+} */
 #navBar {
   width: 100%;
   height: 5vw;
@@ -29,26 +32,50 @@ body {
   position: absolute;
   margin-top: 1vw;
   color: white;
-  height: 3vw;
-  width: 50%;
+  height: 100%;
+  width: 27vw;
   font-size: 2vw;
+  text-decoration: none;
+  cursor:pointer;
+  text-shadow: 0.1vw 0.2vw 0.4vw gray;
+  margin-left:5vw;
+}
+#logo:hover{
+  text-shadow: 0 0 0.4vw white;
 }
 #loginNav {
+  display:flex;
   margin-top: 1vw;
   font-size: 1vw;
   width: 50%;
   height: 3vw;
   padding-left: 80vw;
 }
-#loginNavBtn {
-  font-size: 1.5vw;
-  min-width: 10vw;
-  height: 2vw;
-  background-color:green;
+.navBtn {
+  opacity:0.8;
+  background:darkgreen;
+  display:block;
+  font-size: 1vw;
+  margin-bottom:0.5vw;
+  margin:0.1vw;
+  width:7vw;
+  height: 2.5vw;
   color:white;
   text-decoration: none;
+  text-align:center;
   border-radius:0.1vw;
+  box-shadow: 0.1vw 0.2vw 0.4vw black;
+  line-height:2.5vw;
 }
+#CreateNavBtn {
+  width:12vw;
+}
+.navBtn:hover {
+  opacity:1;
+  transition-duration: 0.5s;
+  background-color:green;
+  box-shadow: 0.1vw 0.2vw 0.4vw white;
+ }
 .signup-form {
   position: relative;
   height: 25vw;
@@ -60,9 +87,12 @@ body {
   box-shadow: 0.1vw 0.2vw 0.4vw #888888;
 }
 #signupLabel {
-  font-size: 4vw;
+  font-size: 2vw;
   margin-bottom: 1vw;
   /* text-align: center; */
+}
+.labels {
+
 }
 #nameDiv {
   margin: auto;
@@ -187,20 +217,46 @@ body {
   margin-top: 2.5vw;
   width: 100%;
 }
+#mainContent {
+  margin-top:1vw;
+  font-size:1vw;
+  width:100%;
+}
+#postCont {
+  display:inline-block;
+  position:fixed;
+  width:50vw;
+  min-height: 20vw;
+  margin-left:5vw;
+  margin-right:50vw;
+  height:auto;
+  border:solid gray;
+}
+#loginChart {
+  display:inline-block;
+  position:fixed;
+  width:20vw;
+  height:auto;
+  min-height: 20vw;
+  margin-left:65vw;
+border:solid gray;
+}
 .chat-popup {
+  display:none;
   font-size: 1vw;
   background: white;
   position: fixed;
   bottom: 5vw;
   right: 5vw;
-  width: 30vw;
+  width: auto;
+  max-width:40vw;
   border: 0.1vw solid #f1f1f1;
   z-index: 9;
   box-shadow: 0.1vw 0.2vw 0.4vw #888888;
 }
-.liveChatBtns {
+#liveChatBtns {
   cursor: pointer;
-  width: 30vw;
+  width: 100%;
   height: 2vw;
   margin-bottom: 1vw;
   border: none;
@@ -215,28 +271,33 @@ body {
   overflow: auto;
 }
 #open-button {
-  display: none;
+  /* display: none; */
   background-color: #2d9a40;
   color: white;
   border: none;
   border-radius: 0.1vw;
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.7;
   position: fixed;
-  bottom: 3vw;
+  bottom: 5vw;
   right: 3vw;
   width: 10vw;
   height: 3vw;
   font-size: 1vw;
   box-shadow: 0.1vw 0.2vw 0.4vw #888888;
 }
+#open-button:hover {
+  opacity:1
+}
 #liveChatMessage {
   height: 2vw;
-  width: 30vw;
+  width: 100%;
   margin-bottom: 1vw;
   font-size: 0.8vw;
 }
 #welcomeMsg {
+  margin-left:5vw;
+  margin-top:1vw;
   font-size: 2vw;
 }
 #chatHead {
@@ -245,7 +306,7 @@ body {
 }
 #createPostForm {
   width: 30vw;
-  height: 18vw;
+  height: auto;
   margin: auto;
   margin-top: 5vw;
   padding:0.5vw;
@@ -283,4 +344,16 @@ body {
   border:none;
   border-radius:0.1vw;
   cursor: pointer;
+}
+.formBtn:hover{
+  transition:0.3s;
+  text-shadow: 0.1vw 0.2vw 0.4vw #888888;
+  box-shadow: 0.1vw 0.2vw 0.4vw #888888;
+}
+footer{
+  width:100%;
+  height:3vw;
+  background-color:#2d9a40;
+  bottom:0;
+  position: fixed;
 }
