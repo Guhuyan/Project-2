@@ -4,7 +4,16 @@ const bcrypt = require("bcryptjs");
 // Homepage logic
 exports.home = function(req, res) {
   if (req.session.user) {
-    res.render("dashboard", { username: req.session.user.username });
+    let query = {};
+    query.UserId = req.session.user.id;
+    db.Post.findAll({
+      where: query
+    }).then(function(dbPost) {
+      res.render("dashboard", {
+        username: req.session.user.username,
+        posts: dbPost
+      });
+    });
   } else {
     res.render("index");
   }
@@ -21,21 +30,23 @@ exports.loginget = function(req, res) {
 
 //Compare user input password to encrypted database password, redirect if match.
 exports.loginpost = function(req, res) {
-  db.User.findOne({ where: { email: req.body.user_email } }).then(function(
-    user
-  ) {
-    if (user && bcrypt.compareSync(req.body.pwd, user.password)) {
-      req.session.user = { username: user.username };
-      req.session.save(function() {
-        res.redirect("/");
-      });
-    } else {
-      res.redirect("/login");
-    }
-  });
+  db.User.findOne({ where: { email: req.body.user_email } })
+    .then(function(user) {
+      if (user && bcrypt.compareSync(req.body.pwd, user.password)) {
+        req.session.user = { id: user.id, username: user.username };
+        req.session.save(function() {
+          res.redirect("/");
+        });
+      } else {
+        res.redirect("/login");
+      }
+    })
+    .catch(function() {
+      res.send("Invalid username/password.");
+    });
 };
 
-exports.dashboard = function(res) {
+exports.dashboard = function(req, res) {
   res.render("main");
 };
 

@@ -11,14 +11,9 @@
     <div id="welcomeMsg">Hello <strong>{{username}}</strong>, welcome back!</div>
     <div id="mainContent">
         <ul id="postCont">
-            ******RENDER POSTS HERE********
-            <BR>
-            *******HEIGHT IS AUTO**********
-            {{!--
-    {{#each posts}}
-        {{> posts/posts-block}}
-    {{/each}}
-    --}}
+            {{#each posts}}
+            {{> posts/post-block}}
+            {{/each}}
         </ul>
         <ul id="loginChart">
             ********LOGGED IN USERS*************

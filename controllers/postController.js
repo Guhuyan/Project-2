@@ -1,12 +1,10 @@
 const db = require("../models");
 
-// This is for postController.js once it is created.
-
 exports.postget = function(req, res) {
   if (!req.session.user) {
     res.render("login");
   } else {
-    res.render("post", { username: req.session.user.username });
+    res.render("post");
   }
 };
 
@@ -14,7 +12,8 @@ exports.create = function(req, res) {
   db.Post.create({
     title: req.body.title,
     body: req.body.body,
-    author: req.session.user.username
+    author: req.session.user.username,
+    UserId: req.session.user.id
   })
     .then(function() {
       console.log(req.body)
@@ -25,7 +24,17 @@ exports.create = function(req, res) {
     });
 };
 
-// Change
+exports.getPosts = function(req, res) {
+  let query = {};
+  if (req.session) {
+    query.UserId = req.session.user.id;
+  }
+  db.Post.findAll({
+    where: query
+  }).then(function(dbPost) {
+    res.json(dbPost);
+  });
+};
 
 exports.viewPost = async function(req, res) {
   db.Post.findOne({
