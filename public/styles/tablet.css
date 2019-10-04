@@ -1,0 +1,163 @@
+@media only screen and (max-width: 1024px) {
+  #navBar {
+    height: 15vw;
+    margin: auto;
+  }
+  #logo {
+    height: 100%;
+    width: 50vw;
+    font-size: 5vw;
+    line-height: 15vw;
+  }
+  #loginNav {
+    margin-top: 1.5vw;
+    font-size: 2vw;
+    padding: 0;
+    margin-left: 68vw;
+  }
+  .navBtn {
+    height: 10vw;
+    width: 15vw;
+    font-size: 3vw;
+    line-height: 10vw;
+  }
+  .signup-form {
+    height: 65vw;
+    width: 85%;
+  }
+  #signupLabel {
+    font-size: 6.5vw;
+  }
+  #nameDiv {
+    height: 5vw;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 3vw;
+  }
+  .nameInputs {
+    width: 50%;
+    height: 6vw;
+    margin-bottom:2vw;
+    font-size: 3vw;
+  }
+  #emailInput {
+    height: 6vw;
+    margin-bottom:2vw;
+    font-size: 3vw;
+  }
+  #passInput {
+    height: 6vw;
+    margin-bottom:2vw;
+    font-size: 3vw;
+  }
+  #bdayLabel {
+    font-size: 5vw;
+    height: 6vw;
+    margin-bottom:2vw;
+  }
+  #bdayInputs {
+    height: 6vw;
+    margin-bottom:2vw;
+  }
+  .dmy {
+    height: 6vw;
+    font-size: 3vw;
+  }
+  #genderSelect {
+    height: 6vw;
+    font-size: 3vw;
+  }
+  #submitBtn {
+    height: 8vw;
+    font-size: 3vw;
+  }
+  .login-form {
+    width: 80%;
+    height: 35vw;
+  }
+  #loginFormLabel {
+    font-size: 6vw;
+  }
+  #loginEmail {
+    font-size: 3vw;
+    width: 100%;
+    height: 6vw;
+  }
+  #loginPassword {
+    font-size: 3vw;
+    width: 100%;
+    height: 6vw;
+  }
+  #loginButton {
+    height: 6vw;
+    font-size: 3vw;
+  }
+  .chat-popup {
+    height:50vw;
+    width: 50vw;
+  }
+  #liveChatBtns {
+    width: 100%;
+    height: 4vw;
+    font-size: 3vw;
+  }
+  #messages {
+    height: 60%;
+    font-size: 2vw;
+  }
+  #open-button {
+      height:10vw;
+      width:20vw;
+    font-size: 4vw;
+  }
+  #liveChatMessage {
+    height: 6vw;
+    width: 100%;
+    font-size: 2vw;
+  }
+  #postCont{
+      display:block;
+      position:absolute;
+      margin:auto;
+      margin-left:5vw;
+      width:60vw;
+  }
+  #loginChart{
+      display:block;
+      position:absolute;
+      width:15vw;
+      margin:auto;
+      margin-left:75vw;
+  }
+  #welcomeMsg {
+    font-size: 6vw;
+  }
+  #chatHead {
+    font-size: 3vw;
+  }
+  #createPostForm {
+      width:80%;
+    height: auto;
+  }
+  .postInputs {
+      width:100%;
+      height:5vw;
+  }
+  #post-body{
+      max-width:100%;
+  }
+  #postLabels {
+    font-size: 4vw;
+    width:100%;
+    margin-bottom:5vw;
+  }
+  #submitPost {
+    width:100%;
+    height:10vw;
+    margin-top:5vw;
+    font-size:3vw;
+  }
+  footer{
+      display:none;
+  }
+}
