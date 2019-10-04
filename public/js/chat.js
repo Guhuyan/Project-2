@@ -6,7 +6,7 @@ socket.on("message", (data) => {
     addMessages(data);
     // socket.emit('welcome', { hello: 'world' });
 });
-$("button[name='send']").on("click", function () {
+$("button[name ='send']").on("click", function () {
     console.log($("#liveChatMessage").val())
     event.preventDefault();
     sendMessage({ message: $("#liveChatMessage").val() });
