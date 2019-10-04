@@ -7,6 +7,7 @@
     "dialect": "mysql"
   },
   "test": {
+    "use_env_variable": "JAWSDB_URL",
     "username": "wz7ooiktpzcflg4e",
     "password": "gd1lav1j8zh5ine5",
     "database": "beewt3vi13c1p9r9",
