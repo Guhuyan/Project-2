@@ -4,7 +4,7 @@
     "password": null,
     "database": "app_db",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "mysql2"
     },
     "test": {
       "use_env_variable": "JAWSDB_URL",
@@ -12,7 +12,7 @@
       "password": "gd1lav1j8zh5ine5",
       "database": "beewt3vi13c1p9r9",
       "host": "u28rhuskh0x5paau.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-      "dialect": "mysql"
+      "dialect": "mysql2"
     },
     "production": {
       "use_env_variable": "JAWSDB_URL",
@@ -20,6 +20,6 @@
       "password": "gd1lav1j8zh5ine5",
       "database": "beewt3vi13c1p9r9",
       "host": "u28rhuskh0x5paau.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-      "dialect": "mysql"
+      "dialect": "mysql2"
     }
   }
