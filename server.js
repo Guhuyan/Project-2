@@ -94,7 +94,7 @@ app.use(express.static("public"));
 // Router
 app.use("/", router);
 
-db.sequelize.sync({ force: false }).then(function () {
+db.sequelize.sync({ force: true }).then(function () {
   http.listen(PORT, () => {
     console.log(`Connected to port: ${PORT}`)
   })
