@@ -47,6 +47,10 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    isLoggedIn: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true
+    },
     errors: {
       type: DataTypes.STRING
     }
